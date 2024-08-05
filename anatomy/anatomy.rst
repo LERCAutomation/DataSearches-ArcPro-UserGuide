@@ -44,9 +44,9 @@ There are four component parts to the Data Searches tool that work together to a
 #. One or more user XML profiles that specifies how the tool is set up and how data will be saved by default.
 #. The Data Searches tool ArcGIS Pro add-in.
 
-The Data Searches tool is used within a GIS environment and requires all the required data layers to be preloaded in the GIS (see :numref:`figUI`). 
+The Data Searches tool is used within a GIS environment and requires all the required data layers to be preloaded in the GIS (see :numref:`figInterfaceAnnotated`). 
 
-.. _figUI:
+.. _figInterfaceAnnotated:
 
 .. figure:: figures/InterfaceAnnotated.png
 	:align: center
@@ -60,19 +60,20 @@ The Data Searches tool is used within a GIS environment and requires all the req
 Tool workflow
 -------------
 
-The Data Searches tool requires minimum user input in order to perform searches once it is configured. The simple workflow is as follows (see :numref:`figUIAnn`):
+The Data Searches tool requires minimum user input in order to perform searches once it is configured. The simple workflow is as follows (see :numref:`figUIAnnotated`):
 
-1. The user enters the unique search reference and, if required, the site name and organisation name for this search.
+1. The user enters the unique search reference.
+2. The user enters the site name and organisation name for this search if required).
 #. The user specifies which data layers to search. Only layers that are loaded in the active map are made available for selection.
 #. A buffer size is entered and the units for this buffer are specified.
 #. The user chooses whether to add any selected GIS layers to the map, and whether (and how) this new data should be labelled.
-#. Finally, the user selects whether a table combining all the results should be created during the process.
-#. The user opts to clear the log file before use and/or open the log file after completion.
-#. The user clicks **Run** the process starts.
+#. The user selects whether a table combining all the results should be created during the process.
+#. The user opts to clear the log file before starting and/or open the log file after completion.
+#. Finally, the user clicks **Run** and the process starts.
 
-.. _figUIAnn:
+.. _figUIAnnotated:
 
-.. figure:: figures/MenuExampleAnnotated.png
+.. figure:: figures/UIAnnotated.png
 	:align: center
 
 	The Data Searches tool workflow
@@ -101,14 +102,14 @@ In essence, the process that the tool follows is identical to the manual search 
 Tool outputs
 ============
 
-Below is an example of outputs generated from a data search using the search options shown in figures :numref:`figUI` and :numref:`figUIAnn`.
+Below is an example of the GIS outputs generated from a data search (:numref:`figGISOutput`).
 
 .. Note::
    The output layers are grouped and their names refer back to the search reference number. The symbology of the layers is customised, as is the labelling applied to each output layer. Only layers for which a feature was found within the search radius will be included in the output. The buffer that was used for the analysis is also included in the output, as is the original search feature.
 
-.. _figOutputAnn:
+.. _figGISOutput:
 
-.. figure:: figures/ExampleOutputAnnotated.png
+.. figure:: figures/ExampleGISOutput.png
 	:align: center
 
 	Example of GIS output from the Data Searches tool
@@ -132,7 +133,7 @@ All the GIS and tabular outputs from the tool are stored in a user defined folde
 
 .. _figOutputFolder:
 
-.. figure:: figures/OutputFolderAnnotated.png
+.. figure:: figures/ExampleOutputFolder.png
 	:align: center
 
 	Example of the Data Searches tool output folder
@@ -145,7 +146,7 @@ All the GIS and tabular outputs from the tool are stored in a user defined folde
 Output files
 ------------
 
-GIS layers can be produced, either as an aid to generating maps for the data search or for sending to the requestor. GIS layers can also be created containing the original search feature and the buffered search area used for the search.
+GIS layers can be produced, either as an aid to generating maps for the data search or for sending to the requester. GIS layers can also be created containing the original search feature and the buffered search area used for the search.
 
 Tabular outputs are also produced in a text based format (.csv or .txt) and can include the radius of the search area and / or the distance of each feature to the search area (:numref:`figTabularOutput`). It is also possible to create summary statistics for any column during the process, which will be included in the tabular output.
 
@@ -156,11 +157,11 @@ Tabular outputs are also produced in a text based format (.csv or .txt) and can 
 
 	Example of tabular output from the Data Searches tool
 
-A combined sites table can also be produced (see :numref:`figCombinedSites`). This table contains a summary of the all sites that are found within the search area. This output is highly customisable and it is easy to exclude or include layers in this table, and choose what data columns to include, as required. Any summary statistics generated for each layer can be included in this table.
+A combined sites table can also be produced (see :numref:`figCombinedSitesOutput`). This table contains a summary of the all sites that are found within the search area. This output is highly customisable and it is easy to exclude or include layers in this table, and choose what data columns to include, as required. Any summary statistics generated for each layer can be included in this table.
 
-.. _figCombinedSites:
+.. _figCombinedSitesOutput:
 
-.. figure:: figures/CombinedSitesTableExample.png
+.. figure:: figures/ExampleCombinedSitesTable.png
 	:align: center
 
 	Example of a combined sites table

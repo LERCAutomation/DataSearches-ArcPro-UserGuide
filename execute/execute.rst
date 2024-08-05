@@ -162,7 +162,7 @@ Using the form
 
 Enter the search reference in the **Search Reference** box. If the search reference is not found in any of the search layers a warning message will appear.
 
-.. _figsearchRefUnknownArcGIS:
+.. _figsearchRefUnknown:
 
 .. figure:: figures/SearchReferenceUnknown.png
 	:align: center
@@ -177,7 +177,7 @@ If required, enter the site name and requesting organisation name.
 
 Select the data layers you wish to include in the search in the 'Layers to Search' list. Use the :kbd:`Ctrl` key to select individual layers, or the :kbd:`Shift` key to select a range of layers. Selected layers will appear highlighted, layers that will not be included remain unselected (:numref:`figSelectLayers`).
 
-.. _figSelectLayersArcGIS:
+.. _figSelectLayers:
 
 .. figure:: figures/SelectLayers.png
 	:align: center
@@ -216,7 +216,7 @@ When either of the 'Yes' options is selected, layers will be added to the map in
 .. note:: 
 	If the 'KeepLayer' attribute is set to ``No`` for an individual layer, it will not be added to the map even if the user selects a 'Yes' option in the drop-down list.
 
-If you have selected ``Yes - With labels``, select how labels should be added in the 'Overwrite Map Labels' drop-down box (:numref:`figLabelSettingsArcGIS`). If you have made a different selection in the 'Add Selected Layers to Map' drop-down box, any settings in the 'Overwrite Map Labels' will be ignored.
+If you have selected ``Yes - With labels``, select how labels should be added in the 'Overwrite Map Labels' drop-down box (:numref:`figLabelSettings`). If you have made a different selection in the 'Add Selected Layers to Map' drop-down box, any settings in the 'Overwrite Map Labels' will be ignored.
 
 .. _figLabelSettings:
 
@@ -251,11 +251,11 @@ There are three options:
 
    \newpage
 
-Decide how the combined sites table should be created by selecting the relevant option in the 'Create Combined Sites Table' drop-down box. There are three options (:numref:`figCombinedSites`):
+Decide how the combined sites table should be created by selecting the relevant option in the 'Create Combined Sites Table' drop-down box. There are three options (:numref:`figCombinedSitesSettings`):
 
-.. _figCombinedSites:
+.. _figCombinedSitesSettings:
 
-.. figure:: figures/CreateCombinedSites.png
+.. figure:: figures/CombinedSitesSettings.png
 	:align: center
 
 	Select how the combined sites table should be created
@@ -265,7 +265,7 @@ Decide how the combined sites table should be created by selecting the relevant 
 - **Overwrite existing table** ... Records will be saved to a new combined sites table. If a combined sites table already exists it will be deleted first.
 
 
-Finally, select whether the log file should be overwritten, and whether the log file should be opened upon completion (:numref:`figClearLogFileArcGIS`). Now the form is set up to run your search.
+Finally, select whether the log file should be overwritten, and whether the log file should be opened upon completion (:numref:`figLogFileOptions`). Now the form is set up to run your search.
 
 .. _figLogFileOptions:
 

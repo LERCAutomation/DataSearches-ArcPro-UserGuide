@@ -41,6 +41,7 @@ To open the Data Searches tool in ArcGIS Pro, open the **Tools** menu bar and cl
 
 	Launching the Data Searches tool in ArcGIS Pro
 
+
 .. note::
 	Once the tool has been opened the window pane will remain open unless it is manually closed. As with other dockable windows in ArcGIS Pro, the window can docked anywhere in the ArcGIS Pro application and can be pinned or hidden when not in use.
 
@@ -67,6 +68,7 @@ Click on the 'Open folder' button (:numref:`figOpenXMLFolderButton`).
 
 	Click on the Open Folder button
 
+
 Then navigate to the folder containing the XML files and click OK. If the tool XML file is present and its
 structure is correct, the list of user profiles will appear in the drop-down list (:numref:`figSelectConfigFolder`).
 
@@ -76,6 +78,7 @@ structure is correct, the list of user profiles will appear in the drop-down lis
 	:align: center
 
 	Locating the configuration file folder
+
 
 .. note::
 	The location of the configuration folder will be stored for future use.
@@ -96,6 +99,7 @@ to choose the XML profile, then the **Profile** tab will appear to allow the use
 
 	Example list of XML profiles to select
 
+
 Select a profile and click 'Load' to start the tool using that profile. If there are any structural issues
 with the selected XML profile, the tool will display a message with the error it has encountered, and not
 load any further (:numref:`figLaunchWarning`).
@@ -107,7 +111,8 @@ load any further (:numref:`figLaunchWarning`).
 
 	Example warning message displayed for any XML structural issues
 
-Provided that the selected XML profile is otherwise correct, the **Select** tab will display 
+
+Provided that the selected XML profile is otherwise correct, the **Search** tab will display 
 (:numref:`figDisplayForm`).
 
 .. _figDisplayform:
@@ -115,11 +120,34 @@ Provided that the selected XML profile is otherwise correct, the **Select** tab 
 .. figure:: figures/DisplayForm.png
 	:align: center
 
-	The form displaying all of the available SQL fields and options
+	The form displaying all of the available search fields and options
 
 .. note::
 	If there is only one user XML profile, or if the tool configuration file is configured to **not** allow
 	the user to choose the XML profile, then the default XML profile will lead automatically (if found).
+
+If any of the map layers specified in the XML profile are not present in the active map window then a warning message will appear (:numref:`figMissingLayersWarning`).
+
+.. _figMissingLayersWarning:
+
+.. figure:: figures/MissingLayersWarning.png
+	:align: center
+
+	Example warning message that one of the layers is missing
+
+
+A warning message will also appear on the form (:numref:`figMissingLayersWarning2`).
+
+.. _figMissingLayersWarning2:
+
+.. figure:: figures/MissingLayersWarning2.png
+	:align: center
+
+	Example warning message that one of the layers is missing
+
+
+.. note::
+	Layers missing from the active map will not appear in the 'Layers to Search' list and hence will not be available for selection.
 
 
 .. raw:: latex
@@ -132,62 +160,49 @@ Provided that the selected XML profile is otherwise correct, the **Select** tab 
 Using the form
 ==============
 
-Enter the search reference in the **Search Reference** box. If the search reference exists in the linked Access database, the site name will be displayed in the Site Name box (:numref:`figSearchRefKnownArcGIS`). The search reference is case insensitive.
-
-.. _figSearchRefKnownArcGIS:
-
-.. figure:: figures/SearchReferenceKnownArcGIS.png
-	:align: center
-
-	Site name displays automatically if the search reference is found
-
-
-If the search reference does not exist, but you are certain the search reference exists in the search layer(s), enter the site name manually (:numref:`figSearchRefUnknownArcGIS`). If the site does not have a name and the attribute :ref:`RequireSiteName <requiresitename>` in the XML profile is set to No, the site name can be left blank.
+Enter the search reference in the **Search Reference** box. If the search reference is not found in any of the search layers a warning message will appear.
 
 .. _figsearchRefUnknownArcGIS:
 
-.. figure:: figures/SearchReferenceUnknownArcGIS.png
+.. figure:: figures/SearchReferenceUnknown.png
 	:align: center
 
-	Site name can be filled in manually if the search reference is not found
+	Warning message that search reference is not found
 
+If required, enter the site name and requesting organisation name.
 
 .. note::
-	The MapInfo version of the form has an additional button **Find** after the `Search Reference` field (:numref:`figSearchRefButtonMapInfo`). This button must be clicked to check if the search reference exists in the linked Access database and display the site name in the `Site Name` box.
+	These fields will only appear if the values for the attributes 'RequireSiteName' and 'RequireOrganisation' are set to ``Yes`` in the XML profile.
 
 
-.. raw:: latex
-
-   \newpage
-
-Now select the data layers you wish to include in the search in the 'Layers to Search' list (ArcGIS) or 'MapInfo Tables' list (MapInfo). Use the :kbd:`Ctrl` key to select individual layers, or the :kbd:`Shift` key to select a range of layers. Selected layers will appear highlighted, layers that will not be included remain unselected (:numref:`figSelectLayersArcGIS`).
+Select the data layers you wish to include in the search in the 'Layers to Search' list. Use the :kbd:`Ctrl` key to select individual layers, or the :kbd:`Shift` key to select a range of layers. Selected layers will appear highlighted, layers that will not be included remain unselected (:numref:`figSelectLayers`).
 
 .. _figSelectLayersArcGIS:
 
-.. figure:: figures/SelectLayersArcGIS.png
+.. figure:: figures/SelectLayers.png
 	:align: center
 
 	Select the layers to include in the search
 
 
-Next, select the buffer size and units in the Buffer Size and Buffer Units boxes (:numref:`figBufferSettingsArcGIS`). The buffer size box accepts decimal points. A buffer size of zero (0) is acceptable, however in ArcGIS the tool will create a buffer polygon of 0.01 metres if a zero buffer size is specified, in order for the buffer layer to be symbolised correctly.
+Next, select the buffer size and units in the Buffer Size and Buffer Units boxes (:numref:`figBufferSettings`). The buffer size box accepts decimal points.
 
-.. _figBufferSettingsArcGIS:
+.. _figBufferSettings:
 
-.. figure:: figures/BufferSettingsArcGIS.png
+.. figure:: figures/BufferSettings.png
 	:align: center
 
-	Select the buffer size and units you wish the search to use.
+	Select the buffer size and units you wish to use.
 
-.. raw:: latex
+.. note::
+	If a buffer size of zero (0) is used, the tool will create a buffer polygon of 0.01 metres in order for the processing to progress using a polygon area.
 
-   \newpage
 
-Decide whether you wish to add the results of the search to the screen and select the relevant option in the 'Add Selected Layers to Map' drop-down box. There are three options (:numref:`figLayerSettingsArcGIS`):
+Decide whether you wish to add the results of the search to the screen and select the relevant option in the 'Add Selected Layers to Map' drop-down box. There are three options (:numref:`figLayerSettings`):
 
-.. _figLayerSettingsArcGIS:
+.. _figLayerSettings:
 
-.. figure:: figures/AddLayerSettingsArcGIS.png
+.. figure:: figures/AddLayerSettings.png
 	:align: center
 
 	Select how results should be added to the map, if at all
@@ -199,20 +214,19 @@ Decide whether you wish to add the results of the search to the screen and selec
 When either of the 'Yes' options is selected, layers will be added to the map in accordance with the settings that are given for each map layer in the configuration document. 
 
 .. note:: 
-	If the KeepLayer attribute is set to ``No`` for an individual layer, it will not be added to the map even if the user selects a 'Yes' option in the drop-down list.
+	If the 'KeepLayer' attribute is set to ``No`` for an individual layer, it will not be added to the map even if the user selects a 'Yes' option in the drop-down list.
 
-.. raw:: latex
+If you have selected ``Yes - With labels``, select how labels should be added in the 'Overwrite Map Labels' drop-down box (:numref:`figLabelSettingsArcGIS`). If you have made a different selection in the 'Add Selected Layers to Map' drop-down box, any settings in the 'Overwrite Map Labels' will be ignored.
 
-   \newpage
+.. _figLabelSettings:
 
-If you have selected 'Yes - With labels', select how labels should be added in the 'Overwrite Map Labels' drop-down box (:numref:`figLabelSettingsArcGIS`). If you have made a different selection in the 'Add Selected Layers to Map' drop-down box, any settings in the 'Overwrite Map Labels' will be ignored. There are three options: 
-
-.. _figLabelSettingsArcGIS:
-
-.. figure:: figures/LabelSettingsArcGIS.png
+.. figure:: figures/LabelSettings.png
 	:align: center
 
 	Select how labels should be added to the map, if at all
+
+
+There are three options:
 
 - **No** ... Existing map labels will not be overwritten. However, new map labels will be created if the map label column given in the configuration document doesn't exist.
 - **Yes - Reset Each Layer** ... Labels will be numbered from 1 and increase by 1 for each feature. For each new layer the label number will be reset to 1.
@@ -237,11 +251,11 @@ If you have selected 'Yes - With labels', select how labels should be added in t
 
    \newpage
 
-Decide how the combined sites table should be created by selecting the relevant option in the 'Create Combined Sites Table' drop-down box. There are three options (:numref:`figCombinedSitesArcGIS`):
+Decide how the combined sites table should be created by selecting the relevant option in the 'Create Combined Sites Table' drop-down box. There are three options (:numref:`figCombinedSites`):
 
-.. _figCombinedSitesArcGIS:
+.. _figCombinedSites:
 
-.. figure:: figures/CreateCombinedSitesArcGIS.png
+.. figure:: figures/CreateCombinedSites.png
 	:align: center
 
 	Select how the combined sites table should be created
@@ -251,14 +265,14 @@ Decide how the combined sites table should be created by selecting the relevant 
 - **Overwrite existing table** ... Records will be saved to a new combined sites table. If a combined sites table already exists it will be deleted first.
 
 
-Finally, select whether the log file should be cleared before the process runs by checking or unchecking the 'Clear Log File' check-box (:numref:`figClearLogFileArcGIS`).
+Finally, select whether the log file should be overwritten, and whether the log file should be opened upon completion (:numref:`figClearLogFileArcGIS`). Now the form is set up to run your search.
 
-.. _figClearLogFileArcGIS:
+.. _figLogFileOptions:
 
-.. figure:: figures/ClearLogFileArcGIS.png
+.. figure:: figures/LogFileOptions.png
 	:align: center
 
-	Select option for clearing the log file
+	Select options for the log file
 
 
 .. raw:: latex
@@ -268,7 +282,7 @@ Finally, select whether the log file should be cleared before the process runs b
 Running the search
 ==================
 
-Click **Run** for the search process to start.
+Once the search details have been entered and the options selected, click **Run**.
 
 While the process is running a progress bar will appear at the bottom of the form providing details of progress (:numref:`figProgressBar`).
 
@@ -280,7 +294,7 @@ While the process is running a progress bar will appear at the bottom of the for
 	The progress bar as the search is running
 
 
-When the search has finished the log file will be opened (:numref:`figLogFile`), if required, so that you can check the process has completed correctly, and the results will be added to the screen as discussed above.
+When the search has finished the log file will be opened (:numref:`figLogFile`), if required, so that you can check the process has completed correctly. The results will be added to the active map.
 
 .. _figLogFile:
 
@@ -290,7 +304,7 @@ When the search has finished the log file will be opened (:numref:`figLogFile`),
 	The log file is shown when the search finishes
 
 
-.. Tip:
+.. Tip::
 	You can now repeat the search process using a different search radius with different data layers, or run for a different search request, as required.
 
 .. _OverwriteWarning:
@@ -321,9 +335,9 @@ When the search is finished, any exported data tables, saved GIS layers, the sea
 	Only results for those layers for which features were found within the search radius are saved and added to the map. Empty files will not be generated.
 
 
-In ArcGIS Pro, search results are added to the current document as follows:
+Search results are added to the active map as follows:
 
-- If 'Yes' is selected in the 'Add Selected Layers to Map' search option, each saved GIS layer (where 'Yes' is selected in the 'KeepLayer' attribute in the configuration) is added to a new group layer. The name of the group layer follows the 'GroupLayerName', with any special characters replaced with the 'RepChar' as specified in the XML document (e.g. '2016/001' becomes '2016 001').
+- If 'Yes' is selected in the 'Add Selected Layers to Map' search option, each saved GIS layer (where 'Yes' is selected in the 'KeepLayer' attribute in the configuration) is added to a new group layer. The name of the group layer follows the 'GroupLayerName' format specified in the XML profile, with any special characters replaced with the 'RepChar' value (e.g. 'LERC/24/001' becomes '001' if the 'GroupLayerName' value is ``%subref%``).
 
 - If either 'Yes - with labels' or 'Yes - without labels' are selected in the 'Add Selected Layers to Map' search option and, if a layer file name is specified in the 'LayerFileName' attribute in the configuration for a saved layer, symbology is applied to that layer using the specified layer file.
 

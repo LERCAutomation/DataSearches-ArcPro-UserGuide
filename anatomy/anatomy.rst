@@ -44,11 +44,11 @@ There are four component parts to the Data Searches tool that work together to a
 #. One or more user XML profiles that specifies how the tool is set up and how data will be saved by default.
 #. The Data Searches tool ArcGIS Pro add-in.
 
-The Data Searches tool is used within a GIS environment and requires all the required data layers to be preloaded in the GIS (see :numref:`figArcGISUI`). 
+The Data Searches tool is used within a GIS environment and requires all the required data layers to be preloaded in the GIS (see :numref:`figUI`). 
 
-.. _figArcGISUI:
+.. _figUI:
 
-.. figure:: figures/InterfaceArcGISAnnotated.png
+.. figure:: figures/InterfaceAnnotated.png
 	:align: center
 
 	Example of an ArcGIS Pro map configured for the Data Searches tool
@@ -101,14 +101,14 @@ In essence, the process that the tool follows is identical to the manual search 
 Tool outputs
 ============
 
-Below is an example of outputs generated from a data search using the search options shown in figures :numref:`figArcGISUI` and :numref:`figUIAnn`.
+Below is an example of outputs generated from a data search using the search options shown in figures :numref:`figUI` and :numref:`figUIAnn`.
 
 .. Note::
    The output layers are grouped and their names refer back to the search reference number. The symbology of the layers is customised, as is the labelling applied to each output layer. Only layers for which a feature was found within the search radius will be included in the output. The buffer that was used for the analysis is also included in the output, as is the original search feature.
 
-.. _figArcOutputAnn:
+.. _figOutputAnn:
 
-.. figure:: figures/ExampleOutputArcGISAnnotated.png
+.. figure:: figures/ExampleOutputAnnotated.png
 	:align: center
 
 	Example of GIS output from the Data Searches tool

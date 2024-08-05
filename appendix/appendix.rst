@@ -82,817 +82,1111 @@ ensure the system is configured to their requirements.
     contents of the configuration file.
 
     The 'DataSearches' node contains all of the entries relating to the
-   ArcGIS Pro add-in variables.
+    ArcGIS Pro add-in variables.
 
-    Each entry relates to a file, folder, table name, column name or other
-    variable used by the ArcGIS Pro add-in to select and export GIS data for
-    each data search.
+    Each entry relates to a file, folder, table name, column name or other variable
+    used by the ArcGIS Pro add-in to select and export GIS data for each data search.
     -->
 
     <configuration>
     <DataSearches>
 
-      <!-- The database where all the data search details are stored. -->
-      <Database>
-        <value>G:\Data search\Data Searches - Data.mdb</value>
-      </Database>
+        <!-- The access database where all the data search details are stored. NOT CURRENTLY SUPPORTED.-->
+        <DatabasePath>
+            <value></value>
+        </DatabasePath>
+        <!-- D:\Data Tools\Data Requests\Database\Data Requests - Data.accdb -->
 
-      <!-- The file location where the enquiries table will be stored. -->
-      <EnquiriesDir>
-        <value>G:\Data search\Enquiries</value>
-      </EnquiriesDir>
+        <!-- The name of the table where the enquiries are stored in the database table. NOT CURRENTLY SUPPORTED. -->
+        <DatabaseTable>
+            <value>Enquiries</value>
+        </DatabaseTable>
 
-      <!-- The field name of the search reference unique value. -->
-      <RefColumn>
-        <value>EnquiryRef</value>
-      </RefColumn>
+        <!-- The column name of the search reference unique value in the database table. NOT CURRENTLY SUPPORTED. -->
+        <DatabaseRefColumn>
+            <value>EnquiryRef</value>
+        </DatabaseRefColumn>
 
-      <!-- The field name of the search reference site name. -->
-      <SiteColumn>
-        <value>SiteName</value>
-      </SiteColumn>
+        <!-- The column name of the site name in the database table. NOT CURRENTLY SUPPORTED. -->
+        <DatabaseSiteColumn>
+            <value>SiteName</value>
+        </DatabaseSiteColumn>
 
-      <!-- The character(s) used to replace any special characters in folder
-        names. -->
-      <RepChar>
-        <value>.</value>
-      </RepChar>
+        <!-- The column name of the organisation in the database table. NOT CURRENTLY SUPPORTED. -->
+        <DatabaseOrgColumn>
+            <value>Organisation</value>
+        </DatabaseOrgColumn>
 
-      <!-- The file location where all data search folders are stored. -->
-      <SaveRootDir>
-        <value>G:\Data search\Data Search Folders\2016-2017</value>
-      </SaveRootDir>
+        <!-- Is a site name required? Yes/No. -->
+        <RequireSiteName>
+            <value>Yes</value>
+        </RequireSiteName>
 
-      <!-- The folder where the report will be saved. -->
-      <SaveFolder>
-        <value>%ref% %sitename%</value>
-      </SaveFolder>
+        <!-- Is an organisation required? Yes/No. -->
+        <RequireOrganisation>
+            <value>Yes</value>
+        </RequireOrganisation>
 
-      <!-- The sub-folder where all data search extracts will be created -->
-      <GISFolder>
-        <value>GIS</value>
-      </GISFolder>
+        <!-- Whether the search table should be updated? Yes/No. -->
+        <UpdateTable>
+            <value>Yes</value>
+        </UpdateTable>
 
-      <!-- The log file name created by the tool to output messages -->
-      <LogFileName>
-        <value>DataSearch_%subref%.log</value>
-      </LogFileName>
+        <!-- The character(s) used to replace any special characters in folder names. Space is allowed. -->
+        <RepChar>
+            <value xml:space="preserve"> </value>
+        </RepChar>
 
-      <!-- The default size to use for the buffer -->
-      <DefaultBufferSize>
-        <value>1</value>
-      </DefaultBufferSize>
+        <!-- The folder where the layer files are stored. -->
+        <LayerFolder>
+            <value>D:\Data Tools\DataSearches\LayerFiles</value>
+        </LayerFolder>
 
-      <!-- The default option (position in the list) to use for the buffer
-        units -->
-      <DefaultBufferUnit>
-        <value>3</value>
-      </DefaultBufferUnit>
+        <!-- The file location where all data search folders are stored. -->
+        <SaveRootDir>
+            <value>D:\Data Tools\DataSearches\Reports</value>
+        </SaveRootDir>
 
-      <!-- The options for the buffer units -->
-      <BufferUnitOptions>
-        <value>Centimetres;cm$Metres;m$Kilometres;km$Feet;ft$Yards;yd$
-            Miles;mi$</value>
-      </BufferUnitOptions>
+        <!-- The folder where the report will be saved. -->
+        <SaveFolder>
+            <value>%shortref% %sitename%</value>
+        </SaveFolder>
 
-      <!-- The symbology for the buffer features -->
-      <BufferSymbology>
-        <value>Global Pen (2,2,16711680) Global Brush (1,16777215,16777215)
-        </value>
-      </BufferSymbology>
+        <!-- The sub-folder where all data search extracts will be written to. -->
+        <GISFolder>
+            <value>gis %subref%</value>
+        </GISFolder>
 
-      <!-- The maximum number of records what will be extracted in any one
-        search extract -->
-      <RecMax>
-        <value>1000000</value>
-      </RecMax>
+        <!-- The log file name created by the tool to output messages. -->
+        <LogFileName>
+            <value>DataSearch_%subref%.log</value>
+        </LogFileName>
 
-      <!-- The name of the table to use as the search area -->
-      <SearchTable>
-        <value>SearchSites</value>
-      </SearchTable>
+        <!-- Whether the map processing should be paused during processing? -->
+        <PauseMap>
+            <value>Yes</value>
+        </PauseMap>
 
-      <!-- The column name in the search area table used to store the search
-        reference -->
-      <SearchColumn>
-        <value>ref</value>
-      </SearchColumn>
+        <!-- By default, should an existing log file be cleared? -->
+        <DefaultClearLogFile>
+            <value>No</value>
+        </DefaultClearLogFile>
 
-      <!-- The buffer aggregate column values -->
-      <AggregateColumns>
-        <value>ref=ref,organisation=organisation,sitename=sitename</value>
-      </AggregateColumns>
+        <!-- By default, should the log file be opened after running-->
+        <DefaultOpenLogFile>
+            <value>Yes</value>
+        </DefaultOpenLogFile>
 
-      <!-- The options for showing the selected tables -->
-      <AddSelectedTablesOptions>
-        <value>No;Yes - Without labels;Yes - With labels</value>
-      </AddSelectedTablesOptions>
+        <!-- The default size to use for the buffer -->
+        <DefaultBufferSize>
+            <value>1</value>
+        </DefaultBufferSize>
 
-      <!-- The default option (position in the list) for whether selected map
-        tables should be added to the map window -->
-      <DefaultAddSelectedTables>
-        <value>3</value>
-      </DefaultAddSelectedTables>
+        <!-- The options for the buffer units. It is not recommended that these are changed -->
+        <!-- These are read as: unit to display; unit that ArcGIS uses (American spelling); abbreviated unit -->
+        <BufferUnitOptions>
+            <value>Centimetres;Centimeters;cm$Metres;Meters;m$Kilometres;Kilometers;km$Feet;Feet;ft$Yards;Yards;yds$Miles;Miles;mi</value>
+        </BufferUnitOptions>
 
-      <!-- The options for overwritting the map labels -->
-      <OverwriteLabelOptions>
-        <value>No;Yes - Reset Counter;Yes - Increment Counter</value>
-      </OverwriteLabelOptions>
+        <!-- The default option (position in the list) to use for the buffer units -->
+        <DefaultBufferUnit>
+            <value>3</value>
+        </DefaultBufferUnit>
 
-      <!-- Whether any map label columns should be overwritten -->
-      <DefaultOverwriteLabels>
-        <value>3</value>
-      </DefaultOverwriteLabels>
+        <!-- Are we keeping the buffer GIS file? Yes/No -->
+        <KeepBufferArea>
+            <value>Yes</value>
+        </KeepBufferArea>
 
-      <!-- Whether a combined sites table should be created -->
-      <DefaultCombinedSitesTable>
-        <value>Yes</value>
-      </DefaultCombinedSitesTable>
+        <!-- The prefix output name for the buffer GIS file. The size of the buffer will be added automatically. -->
+        <BufferPrefix>
+            <value>Buffer_%subref%</value>
+        </BufferPrefix>
 
-      <!-- The column names of the combined sites table -->
-      <CombinedSitesTable>
-        <TableName>
-            <value>Sites</value>
-        </TableName>
-        <Columns>
-            <value>Site_Type Char(10), Site_Name Char(50), Site_Area Float,
-                Map_Label Char(50)</value>
-        </Columns>
-        <Suffix>
-            <value>_sites</value>
-        </Suffix>
-        <Format>
-            <value>csv</value>
-        </Format>
-      </CombinedSitesTable>
+        <!-- The name of the buffer symbology layer file -->
+        <BufferLayerFile>
+            <value>BufferOutline2.lyrx</value>
+        </BufferLayerFile>
 
-      <!-- The names, local names, suffixes, SQL clauses and formats of the
-        map tables -->
-      <MapTables>
-        <Sites_-_SACs>
-            <TableName>
-                <value>SAC</value>
-            </TableName>
-            <Prefix>
-                <value>SAC</value>
-            </Prefix>
-            <Suffix>
-                <value>_sacs</value>
-            </Suffix>
+        <!-- The base name of the layer to use as the search area -->
+        <SearchLayer>
+            <value>Enquiry Site</value>
+        </SearchLayer>
+
+        <!-- The extension names for point, polygon and line search area layers. 
+        Leave blank to just use the SearchLayer name -->
+        <SearchLayerExtensions>
+            <value>_Point;_Poly;_Line</value>
+        </SearchLayerExtensions>
+
+        <!-- The column name in the search area layer used to store the search reference. -->
+        <SearchColumn>
+            <value>SearchRef</value>
+        </SearchColumn>
+
+        <!-- The column name in the search area layer used to store the site name. -->
+        <SiteColumn>
+            <value>SiteName</value>
+        </SiteColumn>
+
+        <!-- The column name in the search area layer used to store the organisation. -->
+        <OrgColumn>
+            <value>Organisation</value>
+        </OrgColumn>
+
+        <!-- The column name in the search area layer used to store the radius. -->
+        <RadiusColumn>
+            <value>Radius</value>
+        </RadiusColumn>
+
+        <!-- Are we keeping the search feature as a layer? Yes/No -->
+        <KeepSearchFeature>
+            <value>Yes</value>
+        </KeepSearchFeature>
+
+        <!-- The name of the search feature output layer -->
+        <SearchOutputName>
+            <value>SearchArea</value>
+        </SearchOutputName>
+
+        <!-- The base name of the search layer symbology file (without the .lyrx). 
+        Note the relevant extension (from SearchLayerExtensions) will be added -->
+        <SearchSymbologyBase>
+            <value>FeatureSymbology</value>
+        </SearchSymbologyBase>
+
+        <!-- The buffer aggregate column values. Delimited with semicolons -->
+        <AggregateColumns>
+            <value>SearchRef;Organisation;SiteName;Radius</value>
+        </AggregateColumns>
+
+        <!-- The options for showing the selected tables -->
+        <AddSelectedLayersOptions>
+            <value>No;Yes - Without labels;Yes - With labels</value><!-- do not change -->
+        </AddSelectedLayersOptions>
+
+        <!-- The default option (position in the list) for whether selected map layers should be added to the map window -->
+        <DefaultAddSelectedLayers>
+            <value>3</value>
+        </DefaultAddSelectedLayers>
+
+        <!-- The name of the group layer that will be created in the ArcGIS table of contents -->
+        <GroupLayerName>
+            <value>%subref%</value>
+        </GroupLayerName>
+
+        <!-- The options for overwritting the map labels -->
+        <OverwriteLabelOptions>
+            <value>No;Yes - Reset Each Layer;Yes - Reset Each Group;Yes - Do Not Reset</value><!-- do not change -->
+        </OverwriteLabelOptions>
+
+        <!-- Whether any map label columns should be overwritten (default setting) -->
+        <DefaultOverwriteLabels>
+            <value>3</value>
+        </DefaultOverwriteLabels>
+
+        <!-- The units any area measurements will be done in. Choose from Ha, Km2, m2. Default is Ha. -->
+        <AreaMeasurementUnit>
+            <value>ha</value>
+        </AreaMeasurementUnit>
+
+        <!-- Options for filling out the Combined Sites table dropdown (do not change) -->
+        <CombinedSitesTableOptions>
+            <value>None;Append to existing table;Overwrite existing table</value>
+        </CombinedSitesTableOptions>
+
+        <!-- Whether a combined sites table should be created by default -->
+        <DefaultCombinedSitesTable>
+            <value>2</value> <!-- 1, 2, 3 -->
+        </DefaultCombinedSitesTable>
+
+        <!-- The details of the combined sites table -->
+        <CombinedSitesTable>
+            <Name>
+                <value>%subref%_sites</value> <!-- do not include .txt or .csv -->
+            </Name>
             <Columns>
-                <value>SAC_Name</value>
+                <value>Site_Type, Site_Ref, Site_Name, Site_Label, Search_Area</value>
             </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value>Group By SAC_Name Order By SAC_Name</value>
-            </ExportCriteria>
-            <KeyColumn>
-                <value>SAC_Name</value>
-            </KeyColumn>
-            <Format>
-                <value>txt</value>
-            </Format>
-            <KeepLayer>
-                <value>Yes</value>
-            </KeepLayer>
-            <OverwriteLabels>
-                <value>Yes</value>
-            </OverwriteLabels>
-            <LabelColumn>
-                <value>Map_Label</value>
-            </LabelColumn>
-            <LabelClause>
-                <value>Font ("Arial",256,10,16711680,16777215) With Map_Label
-                    Auto On</value>
-            </LabelClause>
-            <CombinedSitesColumns>
-                <value>"SAC", SAC_Name, SAC_Area, Map_Label</value>
-            </CombinedSitesColumns>
-            <CombinedSitesCriteria>
-                <value>Group By SAC_Name, Map_Label Order By SAC_Name,
-                    Map_Label</value>
-            </CombinedSitesCriteria>
-        </Sites_-_SACs>
-        <Sites_-_SPAs>
-            <TableName>
-                <value>SPA</value>
-            </TableName>
-            <Prefix>
-                <value>SPA</value>
-            </Prefix>
-            <Suffix>
-                <value>_spas</value>
-            </Suffix>
-            <Columns>
-                <value>SPA_Name</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value>Group By SPA_Name Order By SPA_Name</value>
-            </ExportCriteria>
-            <KeyColumn>
-                <value>SPA_Name</value>
-            </KeyColumn>
-            <Format>
-                <value>txt</value>
-            </Format>
-            <KeepLayer>
-                <value>Yes</value>
-            </KeepLayer>
-            <OverwriteLabels>
-                <value>Yes</value>
-            </OverwriteLabels>
-            <LabelColumn>
-                <value>Map_Label</value>
-            </LabelColumn>
-            <LabelClause>
-                <value>Font ("Arial",256,10,16711680,16777215) With Map_Label
-                    Auto On</value>
-            </LabelClause>
-            <CombinedSitesColumns>
-                <value>"SPA", SPA_Name, SPA_Area, Map_Label</value>
-            </CombinedSitesColumns>
-            <CombinedSitesCriteria>
-                <value>Group By SPA_Name, Map_Label Order By SPA_Name,
-                    Map_Label</value>
-            </CombinedSitesCriteria>
-        </Sites_-_SPAs>
-        <Sites_-_NNRs>
-            <TableName>
-                <value>NNR</value>
-            </TableName>
-            <Prefix>
-                <value>NNR</value>
-            </Prefix>
-            <Suffix>
-                <value>_nnrs</value>
-            </Suffix>
-            <Columns>
-                <value>NNR_Name</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value>Group By NNR_Name Order By NNR_Name</value>
-            </ExportCriteria>
-            <KeyColumn>
-                <value>NNR_Name</value>
-            </KeyColumn>
-            <Format>
-                <value>txt</value>
-            </Format>
-            <KeepLayer>
-                <value>Yes</value>
-            </KeepLayer>
-            <OverwriteLabels>
-                <value>Yes</value>
-            </OverwriteLabels>
-            <LabelColumn>
-                <value>Map_Label</value>
-            </LabelColumn>
-            <LabelClause>
-                <value>Font ("Arial",256,10,16711680,16777215) With Map_Label
-                    Auto On</value>
-            </LabelClause>
-            <CombinedSitesColumns>
-                <value>"NNR", NNR_Name, NNR_Area, Map_Label</value>
-            </CombinedSitesColumns>
-            <CombinedSitesCriteria>
-                <value>Group By NNR_Name, Map_Label Order By NNR_Name,
-                    Map_Label</value>
-            </CombinedSitesCriteria>
-        </Sites_-_NNRs>
-        <Sites_-_Ramsars>
-            <TableName>
-                <value>RAMSAR</value>
-            </TableName>
-            <Prefix>
-                <value>RAMSAR</value>
-            </Prefix>
-            <Suffix>
-                <value>_ramsars</value>
-            </Suffix>
-            <Columns>
-                <value>Ramsar_Name</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value>Group By Ramsar_Name Order By Ramsar_Name</value>
-            </ExportCriteria>
-            <KeyColumn>
-                <value>Ramsar_Name</value>
-            </KeyColumn>
-            <Format>
-                <value>txt</value>
-            </Format>
-            <KeepLayer>
-                <value>Yes</value>
-            </KeepLayer>
-            <OverwriteLabels>
-                <value>Yes</value>
-            </OverwriteLabels>
-            <LabelColumn>
-                <value>Map_Label</value>
-            </LabelColumn>
-            <LabelClause>
-                <value>Font ("Arial",256,10,16711680,16777215) With Map_Label
-                    Auto On</value>
-            </LabelClause>
-            <CombinedSitesColumns>
-                <value>"Ramsar", Ramsar_Name, Ramsar_Area, Map_Label</value>
-            </CombinedSitesColumns>
-            <CombinedSitesCriteria>
-                <value>Group By Ramsar_Name, Map_Label Order By Ramsar_Name,
-                    Map_Label</value>
-            </CombinedSitesCriteria>
-        </Sites_-_Ramsars>
-        <Sites_-_SSSIs>
-            <TableName>
-                <value>SSSI</value>
-            </TableName>
-            <Prefix>
-                <value>SSSI</value>
-            </Prefix>
-            <Suffix>
-                <value>_sssis</value>
-            </Suffix>
-            <Columns>
-                <value>SSSI_Name</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value>Group By SSSI_Name Order By SSSI_Name</value>
-            </ExportCriteria>
-            <KeyColumn>
-                <value>SSSI_Name</value>
-            </KeyColumn>
-            <Format>
-                <value>txt</value>
-            </Format>
-            <KeepLayer>
-                <value>Yes</value>
-            </KeepLayer>
-            <OverwriteLabels>
-                <value>Yes</value>
-            </OverwriteLabels>
-            <LabelColumn>
-                <value>Map_Label</value>
-            </LabelColumn>
-            <LabelClause>
-                <value>Font ("Arial",256,10,16711680,16777215) With Map_Label
-                    Auto On</value>
-            </LabelClause>
-            <CombinedSitesColumns>
-                <value>"SSSI", SSSI_Name, SSSI_Area, Map_Label</value>
-            </CombinedSitesColumns>
-            <CombinedSitesCriteria>
-                <value>Group By SSSI_Name, Map_Label Order By SSSI_Name,
-                    Map_Label</value>
-            </CombinedSitesCriteria>
-        </Sites_-_SSSIs>
-        <Sites_-_LNRs>
-            <TableName>
-                <value>LNR_2015</value>
-            </TableName>
-            <Prefix>
-                <value>LNR</value>
-            </Prefix>
-            <Suffix>
-                <value>_lnrs</value>
-            </Suffix>
-            <Columns>
-                <value>LNR_Name</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value>Group By LNR_Name Order By LNR_Name</value>
-            </ExportCriteria>
-            <KeyColumn>
-                <value>LNR_Name</value>
-            </KeyColumn>
-            <Format>
-                <value>txt</value>
-            </Format>
-            <KeepLayer>
-                <value>Yes</value>
-            </KeepLayer>
-            <OverwriteLabels>
-                <value>Yes</value>
-            </OverwriteLabels>
-            <LabelColumn>
-                <value>Map_Label</value>
-            </LabelColumn>
-            <LabelClause>
-                <value>Font ("Arial",256,10,16711680,16777215) With Map_Label
-                    Auto On</value>
-            </LabelClause>
-            <CombinedSitesColumns>
-                <value>"LNR", LNR_Name, LNR_Area, Map_Label</value>
-            </CombinedSitesColumns>
-            <CombinedSitesCriteria>
-                <value>Group By LNR_Name, Map_Label Order By LNR_Name,
-                Map_Label</value>
-            </CombinedSitesCriteria>
-        </Sites_-_LNRs>
-        <Sites_-_OxonLWS>
-            <TableName>
-                <value>Oxfordshire_Local_Wildlife_Sit</value>
-            </TableName>
-            <Prefix>
-                <value>OxonLWS</value>
-            </Prefix>
-            <Suffix>
-                <value>_oxonlws</value>
-            </Suffix>
-            <Columns>
-                <value>SiteCode + " " + Name "SiteDetails"</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value>Group By SiteDetails Order By SiteDetails</value>
-            </ExportCriteria>
-            <KeyColumn>
-                <value>SiteCode</value>
-            </KeyColumn>
-            <Format>
-                <value>txt</value>
-            </Format>
-            <KeepLayer>
-                <value>Yes</value>
-            </KeepLayer>
-            <OverwriteLabels>
-                <value>Yes</value>
-            </OverwriteLabels>
-            <LabelColumn>
-                <value>Map_Label</value>
-            </LabelColumn>
-            <LabelClause>
-                <value>Font ("Arial",256,10,16711680,16777215) With Map_Label
-                    Auto On</value>
-            </LabelClause>
-            <CombinedSitesColumns>
-                <value>"Oxon LWS", SiteCode + " " + Name "SiteDetails", Area,
-                    Map_Label</value>
-            </CombinedSitesColumns>
-            <CombinedSitesCriteria>
-                <value>Group By SiteDetails, Map_Label Order By SiteDetails,
-                    Map_Label</value>
-            </CombinedSitesCriteria>
-        </Sites_-_OxonLWS>
-        <Sites_-_BerksLWS>
-            <TableName>
-                <value>Berkshire_Local_Wildlife_Sites</value>
-            </TableName>
-            <Prefix>
-                <value>BerksLWS</value>
-            </Prefix>
-            <Suffix>
-                <value>_berkslws</value>
-            </Suffix>
-            <Columns>
-                <value>Sitecode + " " + Sitename "SiteDetails"</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value>Group By SiteDetails Order By SiteDetails</value>
-            </ExportCriteria>
-            <KeyColumn>
-                <value>Sitecode</value>
-            </KeyColumn>
-            <Format>
-                <value>txt</value>
-            </Format>
-            <KeepLayer>
-                <value>Yes</value>
-            </KeepLayer>
-            <OverwriteLabels>
-                <value>Yes</value>
-            </OverwriteLabels>
-            <LabelColumn>
-                <value>Map_Label</value>
-            </LabelColumn>
-            <LabelClause>
-                <value>Font ("Arial",256,10,16711680,16777215) With Map_Label
-                    Auto On</value>
-            </LabelClause>
-            <CombinedSitesColumns>
-                <value>"Berks LWS", Sitecode + " " + Sitename "SiteDetails",
-                    Area, Map_Label</value>
-            </CombinedSitesColumns>
-            <CombinedSitesCriteria>
-                <value>Group By SiteDetails, Map_Label Order By SiteDetails,
-                    Map_Label</value>
-            </CombinedSitesCriteria>
-        </Sites_-_BerksLWS>
-        <Sites_-_OxonLGS>
-            <TableName>
-                <value>Oxfordshire_Local_Geological_S</value>
-            </TableName>
-            <Prefix>
-                <value>OxonLGS</value>
-            </Prefix>
-            <Suffix>
-                <value>_oxonlgs</value>
-            </Suffix>
-            <Columns>
-                <value>Site_Name</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value>Group By Site_Name Order By Site_Name</value>
-            </ExportCriteria>
-            <KeyColumn>
-                <value>Site_Name</value>
-            </KeyColumn>
-            <Format>
-                <value>txt</value>
-            </Format>
-            <KeepLayer>
-                <value>Yes</value>
-            </KeepLayer>
-            <OverwriteLabels>
-                <value>Yes</value>
-            </OverwriteLabels>
-            <LabelColumn>
-                <value>Map_Label</value>
-            </LabelColumn>
-            <LabelClause>
-                <value>Font ("Arial",256,10,16711680,16777215) With Map_Label
-                    Auto On</value>
-            </LabelClause>
-            <CombinedSitesColumns>
-                <value>"Oxon LGS", Site_Name, Area, Map_Label</value>
-            </CombinedSitesColumns>
-            <CombinedSitesCriteria>
-                <value>Group By Site_Name, Map_Label Order By Site_Name,
-                    Map_Label</value>
-            </CombinedSitesCriteria>
-        </Sites_-_OxonLGS>
-        <Sites_-_BerksLGS>
-            <TableName>
-                <value>Berkshire_Local_Geological_Sit</value>
-            </TableName>
-            <Prefix>
-                <value>BerksLGS</value>
-            </Prefix>
-            <Suffix>
-                <value>_berkslgs</value>
-            </Suffix>
-            <Columns>
-                <value>Sitename</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value>Group By Sitename Order By Sitename</value>
-            </ExportCriteria>
-            <KeyColumn>
-                <value>Sitename</value>
-            </KeyColumn>
-            <Format>
-                <value>txt</value>
-            </Format>
-            <KeepLayer>
-                <value>Yes</value>
-            </KeepLayer>
-            <OverwriteLabels>
-                <value>Yes</value>
-            </OverwriteLabels>
-            <LabelColumn>
-                <value>Map_Label</value>
-            </LabelColumn>
-            <LabelClause>
-                <value>Font ("Arial",256,10,16711680,16777215) With Map_Label
-                    Auto On</value>
-            </LabelClause>
-            <CombinedSitesColumns>
-                <value>"Berks LGS", Sitename, Area_ha, Map_Label</value>
-            </CombinedSitesColumns>
-            <CombinedSitesCriteria>
-                <value>Group By Sitename, Map_Label Order By Sitename,
-                    Map_Label</value>
-            </CombinedSitesCriteria>
-        </Sites_-_BerksLGS>
-        <Sites_-_OxonOther>
-            <TableName>
-                <value>Other_Sites_Oxon_Sept_2012</value>
-            </TableName>
-            <Prefix>
-                <value>OxonOther</value>
-            </Prefix>
-            <Suffix>
-                <value>_oxonother</value>
-            </Suffix>
-            <Columns>
-                <value>Name</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value>Group By Name Order By Name</value>
-            </ExportCriteria>
-            <KeyColumn>
-                <value>Name</value>
-            </KeyColumn>
-            <Format>
-                <value>txt</value>
-            </Format>
-            <KeepLayer>
-                <value>Yes</value>
-            </KeepLayer>
-            <OverwriteLabels>
-                <value>No</value>
-            </OverwriteLabels>
-            <LabelColumn>
-                <value>Name</value>
-            </LabelColumn>
-            <LabelClause>
-                <value>Font ("Arial",256,10,16711680,16777215) With Name
-                    Auto On</value>
-            </LabelClause>
-            <CombinedSitesColumns>
-                <value></value>
-            </CombinedSitesColumns>
-            <CombinedSitesCriteria>
-                <value></value>
-            </CombinedSitesCriteria>
-        </Sites_-_OxonOther>
-        <Sites_-_BerksOther>
-            <TableName>
-                <value>Other_Sites_Berkshire</value>
-            </TableName>
-            <Prefix>
-                <value>BerksOther</value>
-            </Prefix>
-            <Suffix>
-                <value>_berksother</value>
-            </Suffix>
-            <Columns>
-                <value>Site_name</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value>Group By Site_name Order By Site_name</value>
-            </ExportCriteria>
-            <KeyColumn>
-                <value>Site_name</value>
-            </KeyColumn>
-            <Format>
-                <value>txt</value>
-            </Format>
-            <KeepLayer>
-                <value>Yes</value>
-            </KeepLayer>
-            <OverwriteLabels>
-                <value>No</value>
-            </OverwriteLabels>
-            <LabelColumn>
-                <value>Site_name</value>
-            </LabelColumn>
-            <LabelClause>
-                <value>Font ("Arial",256,10,16711680,16777215) With Site_name
-                    Auto On</value>
-            </LabelClause>
-            <CombinedSitesColumns>
-                <value></value>
-            </CombinedSitesColumns>
-            <CombinedSitesCriteria>
-                <value></value>
-            </CombinedSitesCriteria>
-        </Sites_-_BerksOther>
-        <Species_-_ProtNotable>
-            <TableName>
-                <value>PN_Data_Searches_Jan2016</value>
-            </TableName>
-            <Prefix>
-                <value>SppProtectedNotable</value>
-            </Prefix>
-            <Suffix>
-                <value>_spppn</value>
-            </Suffix>
-            <Columns>
-                <value>Scientific_name, Common_name, Abundance, Date,
-                    Grid_Reference, Grid_Reference_Qualifier, Location,
-                    Type_of_Record, Data_Origin, European_Directives,
-                    UK_Legislation, Priority_NERC_S41, Other_Designations,
-                    Easting, Northing, Taxon_Group</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value></value>
-            </ExportCriteria>
             <Format>
                 <value>csv</value>
             </Format>
-        </Species_-_ProtNotable>
-        <Species_-_Bat>
-            <TableName>
-                <value>Bats_Data_Searches_Jan2016</value>
-            </TableName>
-            <Prefix>
-                <value>SppBat</value>
-            </Prefix>
-            <Suffix>
-                <value>_sppbat</value>
-            </Suffix>
-            <Columns>
-                <value>Scientific_name, Common_name, Abundance, Date,
-                Grid_Reference, Grid_Reference_Qualifier, Location,
-                Type_of_Record, Data_Origin, European_Directives,
-                UK_Legislation, Priority_NERC_S41, Other_Designations,
-                Easting, Northing, Taxon_Group</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value></value>
-            </ExportCriteria>
-            <Format>
-                <value>csv</value>
-            </Format>
-        </Species_-_Bat>
-        <Species_-_GCN>
-            <TableName>
-                <value>GCNs_Data_Searches_Jan2016</value>
-            </TableName>
-            <Prefix>
-                <value>SppGCN</value>
-            </Prefix>
-            <Suffix>
-                <value>_sppgcn</value>
-            </Suffix>
-            <Columns>
-                <value>Scientific_name, Common_name, Abundance, Date,
-                Grid_Reference, Grid_Reference_Qualifier, Location,
-                Type_of_Record, Data_Origin, European_Directives,
-                UK_Legislation, Priority_NERC_S41, Other_Designations,
-                Easting, Northing, Taxon_Group</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value></value>
-            </ExportCriteria>
-            <Format>
-                <value>csv</value>
-            </Format>
-        </Species_-_GCN>
-        <Species_-_INNS>
-            <TableName>
-                <value>INNS_Data_Searches_Jan2016</value>
-            </TableName>
-            <Prefix>
-                <value>SppINNS</value>
-            </Prefix>
-            <Suffix>
-                <value>_sppinns</value>
-            </Suffix>
-            <Columns>
-                <value>Scientific_name, Common_name, Abundance, Date,
-                Grid_Reference, Grid_Reference_Qualifier, Location,
-                Type_of_Record, Data_Origin, INNS_Designations,
-                Easting, Northing, Taxon_Group</value>
-            </Columns>
-            <SelectCriteria>
-                <value></value>
-            </SelectCriteria>
-            <ExportCriteria>
-                <value></value>
-            </ExportCriteria>
-            <Format>
-                <value>csv</value>
-            </Format>
-        </Species_-_INNS>
-      </MapTables>
+        </CombinedSitesTable>
 
+        <!-- map layer attributes -->
+        <!-- The names, local names, suffixes, SQL clauses and formats of the map tables -->
+        <MapLayers>
+            <Species_-_Protected>
+                <LayerName> <!-- The name of the layer in the display -->
+                    <value>Protected_except_Bats_Birds_Poly</value>
+                </LayerName>
+                <GISOutputName> <!-- The name used for any GIS data extracts -->
+                    <value>SppProt_%subref%</value>
+                </GISOutputName>
+                <TableOutputName> <!-- The name used for any tabular extracts -->
+                    <value>%subref%_sppprot</value>
+                </TableOutputName>
+                <Columns> <!-- The columns to be used in the tabular extracts -->
+                    <value>TaxonName, CommonName, TaxonGroup, RecDate, RecYear, GridRef, Grid1k, GRPrec, Easting, Northing, Location, Abundance, AbundCount, SampleType, RoostType, RoostLoc, BasisOfSel, Recorder, Determiner, Comments, Sensitive, Historic, StatusEuro, StatusUK, StatusOth, RecOccKey, SortOrder, GroupOrder, DateStart, DateEnd, DateType, LastUpdate, VersionDt, Radius</value> <!-- Use commas to separate. NOTE case sensitive! -->
+                </Columns>
+                <GroupColumns> <!-- The columns that should be used for grouping results -->
+                    <value>TaxonName, CommonName, TaxonGroup, RecDate, RecYear, GridRef, Grid1k, GRPrec, Easting, Northing, Location, Abundance, AbundCount, SampleType, RoostType, RoostLoc, BasisOfSel, Recorder, Determiner, Comments, Sensitive, Historic, StatusEuro, StatusUK, StatusOth, RecOccKey, SortOrder, GroupOrder, DateStart, DateEnd, DateType, LastUpdate, VersionDt</value> <!-- Use commas to separate. NOTE case sensitive! -->
+                </GroupColumns> <!-- The columns that should be used for grouping results -->
+                <StatisticsColumns> <!-- If grouping is used, any statistics that should be generated. -->
+                    <value></value><!-- example: area_ha;SUM$Status;FIRST -->
+                </StatisticsColumns>
+                <OrderColumns> <!-- Overrides GroupColumns. Any columns by which the results should be ordered -->
+                    <value></value> <!-- Use commas to separate. NOTE case sensitive! -->
+                </OrderColumns>
+                <Criteria> <!-- Any criteria that should be applied to this layer before extracts are saved -->
+                    <value>Historic = 'N'</value><!-- example: Name = 'myName' OR area_ha > 5 -->
+                </Criteria>
+                <IncludeArea> <!-- Yes / No attribute to define whether an Area field should be included. Ignored for points. -->
+                    <value>No</value>
+                </IncludeArea>
+                <IncludeDistance> <!-- Yes / No attribute to define whether a Distance field should be included -->
+                    <value>No</value>
+                </IncludeDistance>
+                <IncludeRadius> <!-- Yes / No attribute to define whether a Radius field should be included -->
+                    <value>Yes</value>
+                </IncludeRadius>
+                <KeyColumn> <!-- The column in this layer that contains the unique identifier -->
+                    <value>TaxonName</value>
+                </KeyColumn>
+                <Format> <!-- The format that any tabular data will be saved as -->
+                    <value>csv</value>
+                </Format>
+                <KeepLayer> <!-- A Yes/No attribute to define whether a GIS extract should be saved -->
+                    <value>No</value>
+                </KeepLayer>
+                <OutputType> <!-- Whether the layer that is kept should be selected by, clipped to or intersected with the search area -->
+                    <value>Copy</value> <!-- Must be "Copy" (default), "Clip", "Overlay" or "Intersect" -->
+                </OutputType>
+                <LoadWarning>
+                    <value>Yes</value>
+                </LoadWarning>
+                <PreselectLayer>
+                    <value>Yes</value>
+                </PreselectLayer>
+                <DisplayLabels> <!-- switch to decide whether the defined labels should be switched on when displayed. -->
+                    <value>No</value>
+                </DisplayLabels>
+                <LayerFileName> <!-- The name of a layer file (*.lyr) that should be used to symbolise the extract -->
+                    <value></value> <!-- Overrides any label settings defined below -->
+                </LayerFileName>
+                <OverwriteLabels> <!-- A Yes/No attribute to define whether labels may be overwritten -->
+                    <value>No</value>
+                </OverwriteLabels>
+                <LabelColumn> <!-- The name of the label column in this layer (if any) -->
+                    <value></value>
+                </LabelColumn>
+                <LabelClause> <!-- The definition of the labels for this layer (if any) -->
+                    <!-- format: Font:Arial$Size:10$Red:0$Green:0$Blue:0$Overlap:Allow -->
+                    <!-- Types: Allow / None -->
+                    <!-- If no clause is filled in the above settings are applied -->
+                    <value></value>
+                </LabelClause>
+                <MacroName>
+                    <value></value>
+                </MacroName>
+                <CombinedSitesColumns> <!-- The columns to be used in the combined sites table. -->
+                    <!-- Leave blank if the layer should not be included in the combined sites table -->
+                    <!-- Distance may be included as a keyword if IncludeDistance is set to Yes-->
+                    <value></value>
+                </CombinedSitesColumns>
+                <CombinedSitesGroupColumns> <!-- Columns that should be used to group data before inclusion in the combined sites table, if any -->
+                    <value></value>
+                </CombinedSitesGroupColumns>
+                <CombinedSitesStatisticsColumns> <!-- Statistics columns and their required stats to be used for the combined sites table if CombinedSitesGroupColumns has been specified -->
+                    <value></value> <!-- Must include the remaining columns -->
+                </CombinedSitesStatisticsColumns>
+                <CombinedSitesOrderByColumns> <!-- Columns by which results should be ordered in the Combined Sites table -->
+                    <value></value> <!-- Overrides CombinedSitesGroupColumns -->
+                </CombinedSitesOrderByColumns>
+            </Species_-_Protected>
+            <Statutory_Sites_-_SACs>
+                <LayerName>
+                    <value>Special Area of Conservation</value>
+                </LayerName>
+                <GISOutputName>
+                    <value>SACs_%subref%</value>
+                </GISOutputName>
+                <TableOutputName>
+                    <value>%subref%_sacs</value>
+                </TableOutputName>
+                <Columns>
+                    <value>SAC_NAME</value> <!-- Use commas to separate. NOTE case sensitive! -->
+                </Columns>
+                <GroupColumns>
+                    <value>SAC_NAME</value> <!-- Use commas to separate. NOTE case sensitive! -->
+                </GroupColumns>
+                <StatisticsColumns>
+                    <value></value><!-- example: area_ha;SUM$Status;FIRST -->
+                </StatisticsColumns>
+                <OrderColumns> <!-- Overrides GroupColumns -->
+                    <value></value>
+                </OrderColumns>
+                <Criteria>
+                    <value></value><!-- example: Name = 'myName' OR area_ha > 5 -->
+                </Criteria>
+                <IncludeArea>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeArea>
+                <IncludeDistance>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeDistance>
+                <IncludeRadius> <!-- Yes / No attribute to define whether a Radius field should be included -->
+                    <value>Yes</value>
+                </IncludeRadius>
+                <KeyColumn>
+                    <value>SAC_NAME</value>
+                </KeyColumn>
+                <Format>
+                    <value>txt</value>
+                </Format>
+                <KeepLayer>
+                    <value>Yes</value>
+                </KeepLayer>
+                <OutputType>
+                    <value>Copy</value> <!-- Must be "Copy" (default), "Clip", "Overlay" or "Intersect" -->
+                </OutputType>
+                <LoadWarning>
+                    <value>Yes</value>
+                </LoadWarning>
+                <PreselectLayer>
+                    <value>Yes</value>
+                </PreselectLayer>
+                <DisplayLabels>
+                    <value>Yes</value>
+                </DisplayLabels>
+                <LayerFileName>
+                    <value>SAC.lyr</value>
+                </LayerFileName>
+                <OverwriteLabels>
+                    <value>Yes</value>
+                </OverwriteLabels>
+                <LabelColumn>
+                    <value>Map_Label</value>
+                </LabelColumn>
+                <LabelClause>
+                    <!-- format: Font:Calibri$Size:10$Red:0$Green:0$Blue:0$Overlap:Allow -->
+                    <!-- Types: Allow / None -->
+                    <!-- If no clause is filled in the above settings are applied -->
+                    <value>Font:Calibri$Size:10$Red:0$Green:0$Blue:0$Type:Allow</value>
+                </LabelClause>
+                <MacroName>
+                    <value></value>
+                </MacroName>
+                <CombinedSitesColumns>
+                    <!-- Distance may be included as a keyword if IncludeDistance is set to Yes-->
+                    <value>"SAC", " ", SAC_NAME, Map_Label, Radius</value>
+                </CombinedSitesColumns>
+                <CombinedSitesGroupColumns>
+                    <value>SAC_NAME, Map_Label</value>
+                </CombinedSitesGroupColumns>
+                <CombinedSitesStatisticsColumns>
+                    <value></value>
+                </CombinedSitesStatisticsColumns>
+                <CombinedSitesOrderByColumns>
+                    <value></value> <!-- Overrides CombinedSitesGroupColumns -->
+                </CombinedSitesOrderByColumns>
+            </Statutory_Sites_-_SACs>
+            <Statutory_Sites_-_SPAs>
+                <LayerName>
+                    <value>Special Protection Area</value>
+                </LayerName>
+                <GISOutputName>
+                    <value>SPAs_%subref%</value>
+                </GISOutputName>
+                <TableOutputName>
+                    <value>%subref%_spas</value>
+                </TableOutputName>
+                <Columns>
+                    <value>SPA_NAME</value> <!-- Use commas to separate. NOTE case sensitive! -->
+                </Columns>
+                <GroupColumns>
+                    <value>SPA_NAME</value> <!-- Use commas to separate. NOTE case sensitive! -->
+                </GroupColumns>
+                <StatisticsColumns>
+                    <value></value><!-- example: area_ha;SUM$Status;FIRST -->
+                </StatisticsColumns>
+                <OrderColumns> <!-- Overrides GroupColumns -->
+                    <value></value>
+                </OrderColumns>
+                <Criteria>
+                    <value></value><!-- example: Name = 'myName' OR area_ha > 5 -->
+                </Criteria>
+                <IncludeArea>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeArea>
+                <IncludeDistance>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeDistance>
+                <IncludeRadius> <!-- Yes / No attribute to define whether a Radius field should be included -->
+                    <value>Yes</value>
+                </IncludeRadius>
+                <KeyColumn>
+                    <value>SPA_NAME</value>
+                </KeyColumn>
+                <Format>
+                    <value>txt</value>
+                </Format>
+                <KeepLayer>
+                    <value>Yes</value>
+                </KeepLayer>
+                <OutputType>
+                    <value>Copy</value> <!-- Must be "Copy" (default), "Clip", "Overlay" or "Intersect" -->
+                </OutputType>
+                <LoadWarning>
+                    <value>Yes</value>
+                </LoadWarning>
+                <PreselectLayer>
+                    <value>Yes</value>
+                </PreselectLayer>
+                <DisplayLabels>
+                    <value>Yes</value>
+                </DisplayLabels>
+                <LayerFileName>
+                    <value>SPA.lyr</value>
+                </LayerFileName>
+                <OverwriteLabels>
+                    <value>Yes</value>
+                </OverwriteLabels>
+                <LabelColumn>
+                    <value>Map_Label</value>
+                </LabelColumn>
+                <LabelClause>
+                    <!-- format: Font:Calibri$Size:10$Red:0$Green:0$Blue:0$Overlap:Allow -->
+                    <!-- Types: Allow / None -->
+                    <!-- If no clause is filled in the above settings are applied -->
+                    <value></value>
+                </LabelClause>
+                <MacroName>
+                    <value></value>
+                </MacroName>
+                <CombinedSitesColumns>
+                    <!-- Distance may be included as a keyword if IncludeDistance is set to Yes-->
+                    <value>"SPA", " ", SPA_NAME, Map_Label, Radius</value>
+                </CombinedSitesColumns>
+                <CombinedSitesGroupColumns>
+                    <value>SPA_NAME, Map_Label</value>
+                </CombinedSitesGroupColumns>
+                <CombinedSitesStatisticsColumns>
+                    <value></value>
+                </CombinedSitesStatisticsColumns>
+                <CombinedSitesOrderByColumns>
+                    <value></value> <!-- Overrides CombinedSitesGroupColumns -->
+                </CombinedSitesOrderByColumns>
+            </Statutory_Sites_-_SPAs>
+            <Statutory_Sites_-_Ramsars>
+                <LayerName>
+                    <value>Ramsar</value>
+                </LayerName>
+                <GISOutputName>
+                    <value>Ramsars_%subref%</value>
+                </GISOutputName>
+                <TableOutputName>
+                    <value>%subref%_ramsars</value>
+                </TableOutputName>
+                <Columns>
+                    <value>NAME</value> <!-- Use commas to separate. NOTE case sensitive! -->
+                </Columns>
+                <GroupColumns>
+                    <value>NAME</value> <!-- Use commas to separate. NOTE case sensitive! -->
+                </GroupColumns>
+                <StatisticsColumns>
+                    <value></value><!-- example: area_ha;SUM$Status;FIRST -->
+                </StatisticsColumns>
+                <OrderColumns> <!-- Overrides GroupColumns -->
+                    <value></value>
+                </OrderColumns>
+                <Criteria>
+                    <value></value><!-- example: Name = 'myName' OR area_ha > 5 -->
+                </Criteria>
+                <IncludeArea>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeArea>
+                <IncludeDistance>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeDistance>
+                <IncludeRadius> <!-- Yes / No attribute to define whether a Radius field should be included -->
+                    <value>Yes</value>
+                </IncludeRadius>
+                <KeyColumn>
+                    <value>NAME</value>
+                </KeyColumn>
+                <Format>
+                    <value>txt</value>
+                </Format>
+                <KeepLayer>
+                    <value>Yes</value>
+                </KeepLayer>
+                <OutputType>
+                    <value>Copy</value> <!-- Must be "Copy" (default), "Clip", "Overlay" or "Intersect" -->
+                </OutputType>
+                <LoadWarning>
+                    <value>Yes</value>
+                </LoadWarning>
+                <PreselectLayer>
+                    <value>Yes</value>
+                </PreselectLayer>
+                <DisplayLabels>
+                    <value>Yes</value>
+                </DisplayLabels>
+                <LayerFileName>
+                    <value>Ramsar.lyr</value>
+                </LayerFileName>
+                <OverwriteLabels>
+                    <value>Yes</value>
+                </OverwriteLabels>
+                <LabelColumn>
+                    <value>Map_Label</value>
+                </LabelColumn>
+                <LabelClause>
+                    <!-- format: Font:Calibri$Size:10$Red:0$Green:0$Blue:0$TOverlap:Allow -->
+                    <!-- Types: Allow / None -->
+                    <!-- If no clause is filled in the above settings are applied -->
+                    <value></value>
+                </LabelClause>
+                <MacroName>
+                    <value></value>
+                </MacroName>
+                <CombinedSitesColumns>
+                    <!-- Distance may be included as a keyword if IncludeDistance is set to Yes-->
+                    <value>"Ramsar", " ", NAME, Map_Label, Radius</value>
+                </CombinedSitesColumns>
+                <CombinedSitesGroupColumns>
+                    <value>NAME, Map_Label</value>
+                </CombinedSitesGroupColumns>
+                <CombinedSitesStatisticsColumns>
+                    <value></value>
+                </CombinedSitesStatisticsColumns>
+                <CombinedSitesOrderByColumns>
+                    <value></value> <!-- Overrides CombinedSitesGroupColumns -->
+                </CombinedSitesOrderByColumns>
+            </Statutory_Sites_-_Ramsars>
+            <Statutory_Sites_-_SSSIs>
+                <LayerName>
+                    <value>Site of Special Scientific Interest</value>
+                </LayerName>
+                <GISOutputName>
+                    <value>SSSIs_%subref%</value>
+                </GISOutputName>
+                <TableOutputName>
+                    <value>%subref%_sssis</value>
+                </TableOutputName>
+                <Columns>
+                    <value>SSSI_NAME</value> <!-- Use commas to separate. NOTE case sensitive! -->
+                </Columns>
+                <GroupColumns>
+                    <value>SSSI_NAME</value> <!-- Use commas to separate. NOTE case sensitive! -->
+                </GroupColumns>
+                <StatisticsColumns>
+                    <value></value><!-- example: area_ha;SUM$Status;FIRST -->
+                </StatisticsColumns>
+                <OrderColumns> <!-- Overrides GroupColumns -->
+                    <value></value>
+                </OrderColumns>
+                <Criteria>
+                    <value></value><!-- example: Name = 'myName' OR area_ha > 5 -->
+                </Criteria>
+                <IncludeArea>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeArea>
+                <IncludeDistance>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeDistance>
+                <IncludeRadius> <!-- Yes / No attribute to define whether a Radius field should be included -->
+                    <value>Yes</value>
+                </IncludeRadius>
+                <KeyColumn>
+                    <value>SSSI_NAME</value>
+                </KeyColumn>
+                <Format>
+                    <value>txt</value>
+                </Format>
+                <KeepLayer>
+                    <value>Yes</value>
+                </KeepLayer>
+                <OutputType>
+                    <value>Copy</value> <!-- Must be "Copy" (default), "Clip", "Overlay" or "Intersect" -->
+                </OutputType>
+                <LoadWarning>
+                    <value>Yes</value>
+                </LoadWarning>
+                <PreselectLayer>
+                    <value>Yes</value>
+                </PreselectLayer>
+                <DisplayLabels>
+                    <value>Yes</value>
+                </DisplayLabels>
+                <LayerFileName>
+                    <value>SSSI.lyr</value>
+                </LayerFileName>
+                <OverwriteLabels>
+                    <value>Yes</value>
+                </OverwriteLabels>
+                <LabelColumn>
+                    <value>Map_Label</value>
+                </LabelColumn>
+                <LabelClause>
+                    <!-- format: Font:Calibri$Size:10$Red:0$Green:0$Blue:0$Overlap:Allow -->
+                    <!-- Types: Allow / None -->
+                    <!-- If no clause is filled in the above settings are applied -->
+                    <value></value>
+                </LabelClause>
+                <MacroName>
+                    <value></value>
+                </MacroName>
+                <CombinedSitesColumns>
+                    <!-- Distance may be included as a keyword if IncludeDistance is set to Yes-->
+                    <!-- "SSSI", SSSI_NAME, SSSI_AREA, Map_Label -->
+                    <value>"SSSI", " ", SSSI_NAME, Map_Label, Radius</value>
+                </CombinedSitesColumns>
+                <CombinedSitesGroupColumns>
+                    <value>SSSI_NAME, Map_Label</value>
+                </CombinedSitesGroupColumns>
+                <CombinedSitesStatisticsColumns>
+                    <value></value> <!-- Must include the remaining columns -->
+                </CombinedSitesStatisticsColumns>
+                <CombinedSitesOrderByColumns>
+                    <value></value> <!-- Overrides CombinedSitesGroupColumns -->
+                </CombinedSitesOrderByColumns>
+            </Statutory_Sites_-_SSSIs>
+            <Non_Stat_Sites_-_Local_Wildlife_Site>
+                <LayerName>
+                    <value>Local Wildlife Site</value>
+                </LayerName>
+                <GISOutputName>
+                    <value>LWS_%subref%</value>
+                </GISOutputName>
+                <TableOutputName>
+                    <value>%subref%_lws</value>
+                </TableOutputName>
+                <Columns>
+                    <value>siteid, sitename</value> <!-- Use commas to separate. NOTE case sensitive! -->
+                </Columns>
+                <GroupColumns>
+                    <value>siteid, sitename</value> <!-- Use commas to separate. NOTE case sensitive! -->
+                </GroupColumns>
+                <StatisticsColumns>
+                    <value></value><!-- example: area_ha;SUM$Status;FIRST -->
+                </StatisticsColumns>
+                <OrderColumns> <!-- Overrides GroupColumns -->
+                    <value></value>
+                </OrderColumns>
+                <Criteria>
+                    <value></value><!-- example: Name = 'myName' OR area_ha > 5 -->
+                </Criteria>
+                <IncludeArea>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeArea>
+                <IncludeDistance>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeDistance>
+                <IncludeRadius> <!-- Yes / No attribute to define whether a Radius field should be included -->
+                    <value>Yes</value>
+                </IncludeRadius>
+                <KeyColumn>
+                    <value>siteid</value>
+                </KeyColumn>
+                <Format>
+                    <value>txt</value>
+                </Format>
+                <KeepLayer>
+                    <value>Yes</value>
+                </KeepLayer>
+                <OutputType>
+                    <value>Copy</value> <!-- Must be "Copy" (default), "Clip", "Overlay" or "Intersect" -->
+                </OutputType>
+                <LoadWarning>
+                    <value>Yes</value>
+                </LoadWarning>
+                <PreselectLayer>
+                    <value>Yes</value>
+                </PreselectLayer>
+                <DisplayLabels>
+                    <value>Yes</value>
+                </DisplayLabels>
+                <LayerFileName>
+                    <value></value>
+                </LayerFileName>
+                <OverwriteLabels>
+                    <value>Yes</value>
+                </OverwriteLabels>
+                <LabelColumn>
+                    <value>Map_Label</value>
+                </LabelColumn>
+                <LabelClause>
+                    <!-- format: Font:Calibri$Size:10$Red:0$Green:0$Blue:0$Overlap:Allow -->
+                    <!-- Types: Allow / None -->
+                    <!-- If no clause is filled in the above settings are applied -->
+                    <value>Font:Calibri$Size:10$Red:255$Green:0$Blue:0$Type:Allow</value>
+                </LabelClause>
+                <MacroName>
+                    <value></value>
+                </MacroName>
+                <CombinedSitesColumns>
+                    <!-- Distance may be included as a keyword if IncludeDistance is set to Yes-->
+                    <value>"LWS", siteid, sitename, Map_Label, Radius</value>
+                </CombinedSitesColumns>
+                <CombinedSitesGroupColumns>
+                    <value>siteid, sitename, Map_Label</value>
+                </CombinedSitesGroupColumns>
+                <CombinedSitesStatisticsColumns>
+                    <value></value>
+                </CombinedSitesStatisticsColumns>
+                <CombinedSitesOrderByColumns>
+                    <value></value> <!-- Overrides CombinedSitesGroupColumns -->
+                </CombinedSitesOrderByColumns>
+            </Non_Stat_Sites_-_Local_Wildlife_Site>
+            <Management_-_FC>
+                <LayerName>
+                    <value>Forestry Commission</value>
+                </LayerName>
+                <GISOutputName>
+                    <value>MgmtFC_%subref%</value>
+                </GISOutputName>
+                <TableOutputName>
+                    <value>%subref%_mgmtfc</value>
+                </TableOutputName>
+                <Columns>
+                    <value>COUNT_OBJECTID</value>
+                </Columns>
+                <GroupColumns>
+                    <value></value>
+                </GroupColumns>
+                <StatisticsColumns>
+                    <value>OBJECTID;COUNT</value>
+                </StatisticsColumns>
+                <OrderColumns>
+                    <value></value>
+                </OrderColumns>
+                <Criteria>
+                    <value></value>
+                </Criteria>
+                <IncludeArea>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeArea>
+                <IncludeDistance>
+                    <value>No</value>
+                </IncludeDistance>
+                <IncludeRadius>
+                    <value>No</value>
+                </IncludeRadius>
+                <KeyColumn>
+                    <value>OBJECTID</value>
+                </KeyColumn>
+                <Format>
+                    <value>txt</value>
+                </Format>
+                <KeepLayer>
+                    <value>No</value>
+                </KeepLayer>
+                <OutputType>
+                    <value>Copy</value> <!-- Must be "Copy" (default), "Clip", "Overlay" or "Intersect" -->
+                </OutputType>
+                <LoadWarning>
+                    <value>Yes</value>
+                </LoadWarning>
+                <PreselectLayer>
+                    <value>Yes</value>
+                </PreselectLayer>
+                <DisplayLabels>
+                    <value>No</value>
+                </DisplayLabels>
+                <LayerFileName>
+                    <value></value>
+                </LayerFileName>
+                <OverwriteLabels>
+                    <value>No</value>
+                </OverwriteLabels>
+                <LabelColumn>
+                    <value></value>
+                </LabelColumn>
+                <LabelClause>
+                    <!-- format: Font:Calibri$Size:10$Red:0$Green:0$Blue:0$Overlap:Allow -->
+                    <!-- Types: Allow / None -->
+                    <!-- If no clause is filled in the above settings are applied -->
+                    <value></value>
+                </LabelClause>
+                <MacroName>
+                    <value></value>
+                </MacroName>
+                <CombinedSitesColumns>
+                    <value></value>
+                </CombinedSitesColumns>
+                <CombinedSitesGroupColumns>
+                    <value></value>
+                </CombinedSitesGroupColumns>
+                <CombinedSitesStatisticsColumns>
+                    <value></value>
+                </CombinedSitesStatisticsColumns>
+                <CombinedSitesOrderByColumns>
+                    <value></value>
+                </CombinedSitesOrderByColumns>
+            </Management_-_FC>
+            <Management_-_NT_property>
+                <LayerName>
+                    <value>National Trust property</value>
+                </LayerName>
+                <GISOutputName>
+                    <value>MgmtNT_%subref%</value>
+                </GISOutputName>
+                <TableOutputName>
+                    <value>%subref%_mgmtnt</value>
+                </TableOutputName>
+                <Columns>
+                    <value>COUNT_OBJECTID</value>
+                </Columns>
+                <GroupColumns>
+                    <value></value>
+                </GroupColumns>
+                <StatisticsColumns>
+                    <value>OBJECTID;COUNT</value>
+                </StatisticsColumns>
+                <OrderColumns>
+                    <value></value>
+                </OrderColumns>
+                <Criteria>
+                    <value></value>
+                </Criteria>
+                <IncludeArea>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeArea>
+                <IncludeDistance>
+                    <value>No</value>
+                </IncludeDistance>
+                <IncludeRadius>
+                    <value>No</value>
+                </IncludeRadius>
+                <KeyColumn>
+                    <value>OBJECTID</value>
+                </KeyColumn>
+                <Format>
+                    <value>txt</value>
+                </Format>
+                <KeepLayer>
+                    <value>No</value>
+                </KeepLayer>
+                <OutputType>
+                    <value>Copy</value> <!-- Must be "Copy" (default), "Clip", "Overlay" or "Intersect" -->
+                </OutputType>
+                <LoadWarning>
+                    <value>Yes</value>
+                </LoadWarning>
+                <PreselectLayer>
+                    <value>Yes</value>
+                </PreselectLayer>
+                <DisplayLabels>
+                    <value>No</value>
+                </DisplayLabels>
+                <LayerFileName>
+                    <value></value>
+                </LayerFileName>
+                <OverwriteLabels>
+                    <value>No</value>
+                </OverwriteLabels>
+                <LabelColumn>
+                    <value></value>
+                </LabelColumn>
+                <LabelClause>
+                    <!-- format: Font:Calibri$Size:10$Red:0$Green:0$Blue:0$Overlap:Allow -->
+                    <!-- Types: Allow / None -->
+                    <!-- If no clause is filled in the above settings are applied -->
+                    <value></value>
+                </LabelClause>
+                <MacroName>
+                    <value></value>
+                </MacroName>
+                <CombinedSitesColumns>
+                    <value></value>
+                </CombinedSitesColumns>
+                <CombinedSitesGroupColumns>
+                    <value></value>
+                </CombinedSitesGroupColumns>
+                <CombinedSitesStatisticsColumns>
+                    <value></value>
+                </CombinedSitesStatisticsColumns>
+                <CombinedSitesOrderByColumns>
+                    <value></value>
+                </CombinedSitesOrderByColumns>
+            </Management_-_NT_property>
+            <Management_-_RSPB_reserve>
+                <LayerName>
+                    <value>RSPB reserve</value>
+                </LayerName>
+                <GISOutputName>
+                    <value>MgmtRSPB_%subref%</value>
+                </GISOutputName>
+                <TableOutputName>
+                    <value>%subref%_mgmtrspb</value>
+                </TableOutputName>
+                <Columns>
+                    <value>COUNT_OBJECTID</value>
+                </Columns>
+                <GroupColumns>
+                    <value></value>
+                </GroupColumns>
+                <StatisticsColumns>
+                    <value>OBJECTID;COUNT</value>
+                </StatisticsColumns>
+                <OrderColumns>
+                    <value></value>
+                </OrderColumns>
+                <Criteria>
+                    <value></value>
+                </Criteria>
+                <IncludeArea>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeArea>
+                <IncludeDistance>
+                    <value>No</value>
+                </IncludeDistance>
+                <IncludeRadius>
+                    <value>Yes</value>
+                </IncludeRadius>
+                <KeyColumn>
+                    <value>OBJECTID</value>
+                </KeyColumn>
+                <Format>
+                    <value>txt</value>
+                </Format>
+                <KeepLayer>
+                    <value>Yes</value>
+                </KeepLayer>
+                <OutputType>
+                    <value>Copy</value> <!-- Must be "Copy" (default), "Clip", "Overlay" or "Intersect" -->
+                </OutputType>
+                <LoadWarning>
+                    <value>Yes</value>
+                </LoadWarning>
+                <PreselectLayer>
+                    <value>Yes</value>
+                </PreselectLayer>
+                <DisplayLabels>
+                    <value>Yes</value>
+                </DisplayLabels>
+                <LayerFileName>
+                    <value>RSPBReserve.lyr</value>
+                </LayerFileName>
+                <OverwriteLabels>
+                    <value>Yes</value>
+                </OverwriteLabels>
+                <LabelColumn>
+                    <value>Map_Label</value>
+                </LabelColumn>
+                <LabelClause>
+                    <!-- format: Font:Calibri$Size:10$Red:0$Green:0$Blue:0$Overlap:Allow -->
+                    <!-- Types: Allow / None -->
+                    <!-- If no clause is filled in the above settings are applied -->
+                    <value>Font:Calibri$Size:10$Red:255$Green:0$Blue:0$Type:Allow</value>
+                </LabelClause>
+                <MacroName>
+                    <value></value>
+                </MacroName>
+                <CombinedSitesColumns>
+                    <value>"RSPB Reserve", " ", Name, Map_Label, Radius</value>
+                </CombinedSitesColumns>
+                <CombinedSitesGroupColumns>
+                    <value>Name, Map_Label</value>
+                </CombinedSitesGroupColumns>
+                <CombinedSitesStatisticsColumns>
+                    <value></value>
+                </CombinedSitesStatisticsColumns>
+                <CombinedSitesOrderByColumns>
+                    <value>Map_Label</value>
+                </CombinedSitesOrderByColumns>
+            </Management_-_RSPB_reserve>
+            <Management_-_WT_site>
+                <LayerName>
+                    <value>Woodland Trust site</value>
+                </LayerName>
+                <GISOutputName>
+                    <value>MgmtWT_%subref%</value>
+                </GISOutputName>
+                <TableOutputName>
+                    <value>%subref%_mgmtwt</value>
+                </TableOutputName>
+                <Columns>
+                    <value>COUNT_OBJECTID</value>
+                </Columns>
+                <GroupColumns>
+                    <value></value>
+                </GroupColumns>
+                <StatisticsColumns>
+                    <value>OBJECTID;COUNT</value>
+                </StatisticsColumns>
+                <OrderColumns>
+                    <value></value>
+                </OrderColumns>
+                <Criteria>
+                    <value></value>
+                </Criteria>
+                <IncludeArea>
+                    <value>No</value><!-- Yes / No -->
+                </IncludeArea>
+                <IncludeDistance>
+                    <value>No</value>
+                </IncludeDistance>
+                <IncludeRadius>
+                    <value>Yes</value>
+                </IncludeRadius>
+                <KeyColumn>
+                    <value>OBJECTID</value>
+                </KeyColumn>
+                <Format>
+                    <value>txt</value>
+                </Format>
+                <KeepLayer>
+                    <value>Yes</value>
+                </KeepLayer>
+                <OutputType>
+                    <value>Copy</value> <!-- Must be "Copy" (default), "Clip", "Overlay" or "Intersect" -->
+                </OutputType>
+                <LoadWarning>
+                    <value>Yes</value>
+                </LoadWarning>
+                <PreselectLayer>
+                    <value>Yes</value>
+                </PreselectLayer>
+                <DisplayLabels>
+                    <value>Yes</value>
+                </DisplayLabels>
+                <LayerFileName>
+                    <value>WoodlandTrustSite.lyr</value>
+                </LayerFileName>
+                <OverwriteLabels>
+                    <value>Yes</value>
+                </OverwriteLabels>
+                <LabelColumn>
+                    <value>Map_Label</value>
+                </LabelColumn>
+                <LabelClause>
+                    <!-- format: Font:Calibri$Size:10$Red:0$Green:0$Blue:0$Overlap:Allow -->
+                    <!-- Types: Allow / None -->
+                    <!-- If no clause is filled in the above settings are applied -->
+                    <value>Font:Calibri$Size:10$Red:255$Green:0$Blue:0$Type:Allow</value>
+                </LabelClause>
+                <MacroName>
+                    <value></value>
+                </MacroName>
+                <CombinedSitesColumns>
+                    <value>"Woodland Trust site", " ", SiteName, Map_Label, Radius</value>
+                </CombinedSitesColumns>
+                <CombinedSitesGroupColumns>
+                    <value>SiteName, Map_Label</value>
+                </CombinedSitesGroupColumns>
+                <CombinedSitesStatisticsColumns>
+                    <value></value>
+                </CombinedSitesStatisticsColumns>
+                <CombinedSitesOrderByColumns>
+                    <value>Map_Label</value>
+                </CombinedSitesOrderByColumns>
+            </Management_-_WT_site>
+        </MapLayers>
     </DataSearches>
     </configuration>
-
 
 .. raw:: latex
 

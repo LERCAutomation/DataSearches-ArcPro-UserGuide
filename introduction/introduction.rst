@@ -12,10 +12,6 @@ Carrying out data searches (i.e. establishing which protected areas or species a
 
 To facilitate performing data searches a new interface was developed - the **Data Searches** tool. The tool was originally developed for use with MapInfo for Greenspace Information for Greater London CIC (GiGL) but is now available for use with MapInfo, ArcMap Desktop and ArcGIS Pro (this version) and is used by a number of LERCs.
 
-.. raw:: latex
-
-   \newpage
-
 .. index::
 	single: Tool overview
 
@@ -28,14 +24,16 @@ The Data Searches tool presents a simple user interface, while being configurabl
 
 .. figure:: figures/UserInterface.png
 	:align: center
+	:scale: 80
 
 	The Data Searches tool interface
 
-The tool uses an existing GIS layer (this can be points, lines or polygons) in the interface to find the geographical location of the search request reference. It then queries selected data layers in the active map window to establish which have features within the specified radius of the location, and then exports this information in a format requested by the user. The output data can be both spatial (as new shapefiles) and/or tabular (as TXT or CSV files). The tool creates a log file for each search which details the steps that were taken during the process. The process is discussed in this document in the section on :doc:`Running the tool <../execute/execute>`.
 
 .. raw:: latex
 
    \newpage
+
+The tool uses an existing GIS layer (this can be points, lines or polygons) in the interface to find the geographical location of the search request reference. It then queries selected data layers in the active map window to establish which have features within the specified radius of the location, and then exports this information in a format requested by the user. The output data can be both spatial (as new shapefiles) and/or tabular (as TXT or CSV files). The tool creates a log file for each search which details the steps that were taken during the process. The process is discussed in this document in the section on :doc:`Running the tool <../execute/execute>`.
 
 Defining the way that searches should be carried out, the output that they generate, and the layers that can potentially be included in a search is done via a user configuration file written in XML. Using this document the user can configure all the parts of the search, for example:
 

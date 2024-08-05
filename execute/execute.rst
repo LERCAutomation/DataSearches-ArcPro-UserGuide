@@ -122,6 +122,7 @@ Provided that the selected XML profile is otherwise correct, the **Search** tab 
 
 .. figure:: figures/DisplayForm.png
 	:align: center
+	:scale: 80
 
 	The form displaying all of the available search fields and options
 
@@ -129,6 +130,10 @@ Provided that the selected XML profile is otherwise correct, the **Search** tab 
 .. note::
 	If there is only one user XML profile, or if the tool configuration file is configured to **not** allow
 	the user to choose the XML profile, then the default XML profile will lead automatically (if found).
+
+.. raw:: latex
+
+   \newpage
 
 If any of the map layers specified in the XML profile are not present in the active map window then a warning message will appear (:numref:`figMissingLayersWarning`).
 
@@ -164,7 +169,17 @@ A warning message will also appear on the form (:numref:`figMissingLayersWarning
 Using the form
 ==============
 
-Enter the search reference in the **Search Reference** box. If the search reference is not found in any of the search layers a warning message will appear (:numref:`figSearchRefUnknown`).
+Enter the search reference in the **Search Reference** box (:numref:`figEnterSearchReference`).
+
+.. _figEnterSearchReference:
+
+.. figure:: figures/EnterSearchReference.png
+	:align: center
+
+	Enter the reference for the search
+
+
+If the search reference is not found in any of the search layers a warning message will appear (:numref:`figSearchRefUnknown`).
 
 .. _figSearchRefUnknown:
 
@@ -174,7 +189,19 @@ Enter the search reference in the **Search Reference** box. If the search refere
 	Warning message that search reference is not found
 
 
-If required, enter the site name and requesting organisation name.
+.. raw:: latex
+
+   \newpage
+
+If required, enter the site name and requesting organisation name (:numref:`figEnterSiteName`).
+
+.. _figEnterSiteName:
+
+.. figure:: figures/EnterSearchReference.png
+	:align: center
+
+	Enter the site name and organisation for the search (if required)
+
 
 .. note::
 	These fields will only appear if the values for the attributes 'RequireSiteName' and 'RequireOrganisation' are set to ``Yes`` in the XML profile.

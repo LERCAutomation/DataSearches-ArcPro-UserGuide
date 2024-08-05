@@ -50,6 +50,7 @@ The Data Searches tool is used within a GIS environment and requires all the req
 
 .. figure:: figures/InterfaceAnnotated.png
 	:align: center
+	:scale: 80
 
 	Example of an ArcGIS Pro map configured for the Data Searches tool
 
@@ -63,6 +64,14 @@ Tool workflow
 
 The Data Searches tool requires minimum user input in order to perform searches once it is configured. The simple workflow is as follows (see :numref:`figUIAnnotated`):
 
+.. _figUIAnnotated:
+
+.. figure:: figures/UIAnnotated.png
+	:align: center
+
+	The Data Searches tool workflow
+
+
 1. The user enters the unique search reference.
 2. The user enters the site name and organisation name for this search if required).
 #. The user specifies which data layers to search. Only layers that are loaded in the active map are made available for selection.
@@ -72,13 +81,9 @@ The Data Searches tool requires minimum user input in order to perform searches 
 #. The user opts to clear the log file before starting and/or open the log file after completion.
 #. Finally, the user clicks **Run** and the process starts.
 
-.. _figUIAnnotated:
+.. raw:: latex
 
-.. figure:: figures/UIAnnotated.png
-	:align: center
-
-	The Data Searches tool workflow
-
+   \newpage
 
 In essence, the process that the tool follows is identical to the manual search process described above. 
 

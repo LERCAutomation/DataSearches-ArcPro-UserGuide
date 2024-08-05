@@ -53,6 +53,7 @@ The Data Searches tool is used within a GIS environment and requires all the req
 
 	Example of an ArcGIS Pro map configured for the Data Searches tool
 
+
 .. raw:: latex
 
    \newpage
@@ -102,12 +103,12 @@ In essence, the process that the tool follows is identical to the manual search 
 Tool outputs
 ============
 
-Below is an example of the GIS outputs generated from a data search (:numref:`figGISOutput`).
+Below is an example of the GIS outputs generated from a data search (:numref:`figGISOutputExample`).
 
 .. Note::
    The output layers are grouped and their names refer back to the search reference number. The symbology of the layers is customised, as is the labelling applied to each output layer. Only layers for which a feature was found within the search radius will be included in the output. The buffer that was used for the analysis is also included in the output, as is the original search feature.
 
-.. _figGISOutput:
+.. _figGISOutputExample:
 
 .. figure:: figures/ExampleGISOutput.png
 	:align: center
@@ -122,7 +123,7 @@ Below is an example of the GIS outputs generated from a data search (:numref:`fi
 Output folder
 -------------
 
-All the GIS and tabular outputs from the tool are stored in a user defined folder (:numref:`figOutputFolder`). These outputs **may** include one or more of the following:
+All the GIS and tabular outputs from the tool are stored in a user defined folder (:numref:`figOutputFolderExample`). These outputs **may** include one or more of the following:
 
 - A GIS layer containing the search feature
 - A GIS layer containing the buffer that was used
@@ -131,7 +132,7 @@ All the GIS and tabular outputs from the tool are stored in a user defined folde
 - A combined sites table
 - The log file
 
-.. _figOutputFolder:
+.. _figOutputFolderExample:
 
 .. figure:: figures/ExampleOutputFolder.png
 	:align: center
@@ -148,18 +149,19 @@ Output files
 
 GIS layers can be produced, either as an aid to generating maps for the data search or for sending to the requester. GIS layers can also be created containing the original search feature and the buffered search area used for the search.
 
-Tabular outputs are also produced in a text based format (.csv or .txt) and can include the radius of the search area and / or the distance of each feature to the search area (:numref:`figTabularOutput`). It is also possible to create summary statistics for any column during the process, which will be included in the tabular output.
+Tabular outputs are also produced in a text based format (.csv or .txt) and can include the radius of the search area and / or the distance of each feature to the search area (:numref:`figTabularOutputExample`). It is also possible to create summary statistics for any column during the process, which will be included in the tabular output.
 
-.. _figTabularOutput:
+.. _figTabularOutputExample:
 
 .. figure:: figures/ExampleTabularOutput.png
 	:align: center
 
 	Example of tabular output from the Data Searches tool
 
-A combined sites table can also be produced (see :numref:`figCombinedSitesOutput`). This table contains a summary of the all sites that are found within the search area. This output is highly customisable and it is easy to exclude or include layers in this table, and choose what data columns to include, as required. Any summary statistics generated for each layer can be included in this table.
 
-.. _figCombinedSitesOutput:
+A combined sites table can also be produced (see :numref:`figCombinedSitesOutputExample`). This table contains a summary of the all sites that are found within the search area. This output is highly customisable and it is easy to exclude or include layers in this table, and choose what data columns to include, as required. Any summary statistics generated for each layer can be included in this table.
+
+.. _figCombinedSitesOutputExample:
 
 .. figure:: figures/ExampleCombinedSitesTable.png
 	:align: center
@@ -175,7 +177,7 @@ Finally, the log file details each step that was taken during the process, and g
 
 .. _figLogFileExample:
 
-.. figure:: figures/LogFileExample.png
+.. figure:: figures/ExampleLogFile.png
 	:align: center
 
 	Example of a Data Searches tool log file

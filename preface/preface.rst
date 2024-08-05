@@ -77,9 +77,9 @@ Useful links
 
 Related community links:
 
-* Administrators (`ArcGIS <https://github.com/LERCAutomation/DataSearches-ArcPro/releases/>`_) - Release notes and installers for ArcGIS Pro.
-* Developers (`ArcGIS <https://github.com/LERCAutomation/DataSearches-ArcPro>`_) - Source code for the ArcGIS Pro version of the Data Searches tool.
-* Issues (`ArcGIS Pro <https://github.com/LERCAutomation/DataSearches-ArcPro/issues>`_) - Details of known issues and existing change requests.
+* Administrators (`Releases <https://github.com/LERCAutomation/DataSearches-ArcPro/releases/>`_) - Release notes and installers for ArcGIS Pro.
+* Developers (`Source code <https://github.com/LERCAutomation/DataSearches-ArcPro>`_) - Source code for the ArcGIS Pro version of the Data Searches tool.
+* Issues (`Issues <https://github.com/LERCAutomation/DataSearches-ArcPro/issues>`_) - Details of known issues and existing change requests.
 
 
 .. index::

@@ -5,9 +5,6 @@
 Running the tool
 ****************
 
-Instructions
-------------
-
 The operation of the Data Searches tool is explained in this section. While the interface is similar between the ArcGIS Pro, ArcMap and MapInfo implementations of the tool, there are some differences. This user guide is specific to the ArcGIS Pro version of the tool.
 
 As discussed in the :doc:`Setting up the tool <../setup/setup>` section, the Data Searches tool is operated from a GIS project file within which the data required to run the tool is already loaded in the active map window. Therefore, before running the tool, ensure the following conditions are met:
@@ -44,6 +41,7 @@ To open the Data Searches tool in ArcGIS Pro, open the **Tools** menu bar and cl
 
 .. note::
 	Once the tool has been opened the window pane will remain open unless it is manually closed. As with other dockable windows in ArcGIS Pro, the window can docked anywhere in the ArcGIS Pro application and can be pinned or hidden when not in use.
+
 
 .. raw:: latex
 
@@ -82,6 +80,11 @@ structure is correct, the list of user profiles will appear in the drop-down lis
 
 .. note::
 	The location of the configuration folder will be stored for future use.
+
+
+.. raw:: latex
+
+   \newpage
 
 .. index::
 	single: Loading a profile
@@ -122,6 +125,7 @@ Provided that the selected XML profile is otherwise correct, the **Search** tab 
 
 	The form displaying all of the available search fields and options
 
+
 .. note::
 	If there is only one user XML profile, or if the tool configuration file is configured to **not** allow
 	the user to choose the XML profile, then the default XML profile will lead automatically (if found).
@@ -160,14 +164,15 @@ A warning message will also appear on the form (:numref:`figMissingLayersWarning
 Using the form
 ==============
 
-Enter the search reference in the **Search Reference** box. If the search reference is not found in any of the search layers a warning message will appear.
+Enter the search reference in the **Search Reference** box. If the search reference is not found in any of the search layers a warning message will appear (:numref:`figSearchRefUnknown`).
 
-.. _figsearchRefUnknown:
+.. _figSearchRefUnknown:
 
 .. figure:: figures/SearchReferenceUnknown.png
 	:align: center
 
 	Warning message that search reference is not found
+
 
 If required, enter the site name and requesting organisation name.
 
@@ -194,11 +199,12 @@ Next, select the buffer size and units in the Buffer Size and Buffer Units boxes
 
 	Select the buffer size and units you wish to use.
 
+
 .. note::
-	If a buffer size of zero (0) is used, the tool will create a buffer polygon of 0.01 metres in order for the processing to progress using a polygon area.
+	If a buffer size of zero (0) is used, the tool will create a buffer polygon of 0.01 metres in order for the processing to continue using a polygon area.
 
 
-Decide whether you wish to add the results of the search to the screen and select the relevant option in the 'Add Selected Layers to Map' drop-down box. There are three options (:numref:`figLayerSettings`):
+Decide whether you wish to add the results of the search to the screen and select the relevant option in the 'Add Layers to Map' drop-down box (:numref:`figLayerSettings`):
 
 .. _figLayerSettings:
 
@@ -206,6 +212,9 @@ Decide whether you wish to add the results of the search to the screen and selec
 	:align: center
 
 	Select how results should be added to the map, if at all
+
+
+There are three options:
 
 - **No** ... Layers will not be added to the map.
 - **Yes - Without labels** ... Layers will be added to the map but will not be labelled.
@@ -216,7 +225,7 @@ When either of the 'Yes' options is selected, layers will be added to the map in
 .. note:: 
 	If the 'KeepLayer' attribute is set to ``No`` for an individual layer, it will not be added to the map even if the user selects a 'Yes' option in the drop-down list.
 
-If you have selected ``Yes - With labels``, select how labels should be added in the 'Overwrite Map Labels' drop-down box (:numref:`figLabelSettings`). If you have made a different selection in the 'Add Selected Layers to Map' drop-down box, any settings in the 'Overwrite Map Labels' will be ignored.
+If you have selected ``Yes - With labels``, select how labels should be added in the 'Overwrite Map Labels' drop-down box (:numref:`figLabelSettings`). If you have made a different selection in the 'Add Layers to Map' drop-down box, any settings in the 'Overwrite Map Labels' will be ignored.
 
 .. _figLabelSettings:
 
@@ -251,7 +260,7 @@ There are three options:
 
    \newpage
 
-Decide how the combined sites table should be created by selecting the relevant option in the 'Create Combined Sites Table' drop-down box. There are three options (:numref:`figCombinedSitesSettings`):
+Decide how the combined sites table should be created by selecting the relevant option in the 'Create Combined Sites Table' drop-down box (:numref:`figCombinedSitesSettings`):
 
 .. _figCombinedSitesSettings:
 
@@ -259,6 +268,8 @@ Decide how the combined sites table should be created by selecting the relevant 
 	:align: center
 
 	Select how the combined sites table should be created
+
+There are three options:
 
 - **None** ... No combined sites table will be created. Any existing combined sites table for this search reference will be retained.
 - **Append to existing table** ... Records will be appended to the combined sites table (if it already exists), otherwise a new combined sites table will be created.
@@ -301,7 +312,7 @@ When the search has finished the log file will be opened (:numref:`figLogFile`),
 .. figure:: figures/LogFileExample.png
 	:align: center
 
-	The log file is shown when the search finishes
+	The log file shown when the search finishes
 
 
 .. Tip::
@@ -310,7 +321,7 @@ When the search has finished the log file will be opened (:numref:`figLogFile`),
 .. _OverwriteWarning:
 
 .. caution:: 
-	If you rerun the search process using the **same search reference**, for example with a different buffer size, it is possible that some outputs will overwritten, or duplicated, as follows:
+	If you re-run the search process using the **same search reference**, for example with a different buffer size, it is possible that some outputs will overwritten, or duplicated, as follows:
 
 	- Output tables and GIS layers will be overwritten if the same map layer is included in the second search. Only one copy of each output table and / or GIS layer can be saved for the same layer for the same search reference.
 	
@@ -337,11 +348,11 @@ When the search is finished, any exported data tables, saved GIS layers, the sea
 
 Search results are added to the active map as follows:
 
-- If 'Yes' is selected in the 'Add Selected Layers to Map' search option, each saved GIS layer (where 'Yes' is selected in the 'KeepLayer' attribute in the configuration) is added to a new group layer. The name of the group layer follows the 'GroupLayerName' format specified in the XML profile, with any special characters replaced with the 'RepChar' value (e.g. 'LERC/24/001' becomes '001' if the 'GroupLayerName' value is ``%subref%``).
+- If 'Yes' is selected in the 'Add Layers to Map' search option, each saved GIS layer (where 'Yes' is selected in the 'KeepLayer' attribute in the configuration) is added to a new group layer. The name of the group layer follows the 'GroupLayerName' format specified in the XML profile, with any special characters replaced with the 'RepChar' value (e.g. 'LERC/24/001' becomes '001' if the 'GroupLayerName' value is ``%subref%``).
 
-- If either 'Yes - with labels' or 'Yes - without labels' are selected in the 'Add Selected Layers to Map' search option and, if a layer file name is specified in the 'LayerFileName' attribute in the configuration for a saved layer, symbology is applied to that layer using the specified layer file.
+- If either 'Yes - with labels' or 'Yes - without labels' are selected in the 'Add Layers to Map' search option and, if a layer file name is specified in the 'LayerFileName' attribute in the configuration for a saved layer, symbology is applied to that layer using the specified layer file.
 
-- If 'Yes - with labels' is selected in the 'Add Selected Layers to Map' search option and, if a column name is specified in the 'LabelColumn' attribute in the configuration for a saved layer, labels are applied to that layer (as specified in the configuration using the 'LabelClause' attribute).
+- If 'Yes - with labels' is selected in the 'Add Layers to Map' search option and, if a column name is specified in the 'LabelColumn' attribute in the configuration for a saved layer, labels are applied to that layer (as specified in the configuration using the 'LabelClause' attribute).
 
 - A buffer GIS layer, created during the search, will be added to the new group layer and symbology will be applied using the appropriate layer file (as specified in the configuration using the 'BufferLayerName' general attribute).
 

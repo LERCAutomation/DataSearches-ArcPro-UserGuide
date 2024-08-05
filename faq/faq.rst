@@ -13,7 +13,7 @@ General questions
 
 **How do I get a copy of the tool?**
 
-	The source code as well as the installer setups can be downloaded from GitHub (`MapInfo <https://github.com/LERCAutomation/DataSearches-MapInfo/releases>`_ or `ArcGIS <https://github.com/LERCAutomation/DataSearches--ArcObjects2/releases>`__ or `ArcGIS Pro <https://github.com/LERCAutomation/DataSearches-ArcPro/releases>`_). Please ensure that you use the correct configuration file, examples copy of which are also included with the releases.
+	The source code as well as the installer setups can be downloaded from GitHub (`MapInfo <https://github.com/LERCAutomation/DataSearches-MapInfo/releases>`_ or `ArcGIS <https://github.com/LERCAutomation/DataSearches--ArcObjects2/releases>`_ or `ArcGIS Pro <https://github.com/LERCAutomation/DataSearches-ArcPro/releases>`_). Please ensure that you use the correct configuration file, examples copy of which are also included with the releases.
 
 **Can several people use the tool at the same time?**
 

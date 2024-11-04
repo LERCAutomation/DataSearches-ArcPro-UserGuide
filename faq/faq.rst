@@ -30,7 +30,7 @@ Operating the tool
 
 	This issue can arise in several ways:
 
-	- The layer isn't loaded in your GIS document or workspace. In this case, a :ref:`message will pop up <figlaunchwarning>` before the form is displayed informing you the layer isn't loaded. Add the layer to GIS and restart the tool and the problem should be resolved.
+	- The layer isn't loaded in your GIS document or workspace. In this case, a :ref:`message will pop up <figlaunchwarning>` before the form is displayed informing you the layer isn't loaded. Add the layer to GIS and reload the profile and the problem should be resolved.
 	- The layer isn't listed in the XML configuration document. Please refer to the :doc:`Setting up the tool <../setup/setup>` section and add it as a map layer.
 	- The map layer is listed in the configuration document, but the 'LayerName' is spelled incorrectly. Note that the name must follow the exact format of the name of the layer in the active map window (in ArcGIS Pro the name is also case sensitive).
 

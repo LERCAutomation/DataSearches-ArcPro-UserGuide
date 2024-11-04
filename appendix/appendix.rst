@@ -60,7 +60,7 @@ Below is an example of tool XML that must be present for the Data Searches tool 
 Example user XML profile
 ========================
 
-Below is an example of XML profile that might be used to set up the Data Searches tool in ArcGIS Pro.
+Below is an example of an XML profile that might be used to set up the Data Searches tool in ArcGIS Pro.
 Note, many of the settings have been included for illustration only and it is up to each user or LERC to
 ensure the system is configured to their requirements.
 
@@ -259,6 +259,11 @@ ensure the system is configured to their requirements.
         <AggregateColumns>
             <value>SearchRef;Organisation;SiteName;Radius</value>
         </AggregateColumns>
+
+        <!-- The default option for whether to keep the selected map layers. -->
+        <DefaultKeepSelectedLayers>
+        	<value>Yes</value>
+        </DefaultKeepSelectedLayers>
 
         <!-- The options for showing the selected tables -->
         <AddSelectedLayersOptions>

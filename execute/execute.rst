@@ -24,7 +24,7 @@ As discussed in the :doc:`Setting up the tool <../setup/setup>` section, the Dat
    \newpage
 
 .. index::
-	single: Opening the form
+	single: Opening the tool
 
 Opening the tool
 ================
@@ -207,7 +207,7 @@ If required, enter the site name and requesting organisation name (:numref:`figE
 	These fields will only appear if the values for the attributes 'RequireSiteName' and 'RequireOrganisation' are set to ``Yes`` in the XML profile.
 
 
-Select the data layers you wish to include in the search in the 'Layers to Search' list. Use the :kbd:`Ctrl` key to select individual layers, or the :kbd:`Shift` key to select a range of layers. Selected layers will appear highlighted, layers that will not be included remain unselected (:numref:`figSelectLayers`).
+Select the data layers you wish to include in the search in the 'Layers to Search' list.
 
 .. _figSelectLayers:
 
@@ -215,6 +215,9 @@ Select the data layers you wish to include in the search in the 'Layers to Searc
 	:align: center
 
 	Select the layers to include in the search
+
+.. tip::
+	Use the :kbd:`Ctrl` key to select multiple rows in the list, :kbd:`Shift` key to select a range of rows or :kbd:`Ctrl A` to select all of the rows. Selected rows will appear highlighted, rows that will not be included remain unselected.
 
 
 Next, select the buffer size and units in the Buffer Size and Buffer Units boxes (:numref:`figBufferSettings`). The buffer size box accepts decimal points.

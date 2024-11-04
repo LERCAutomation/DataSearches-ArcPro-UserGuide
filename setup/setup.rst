@@ -32,7 +32,7 @@ HelpURL
 User configuration profiles
 ---------------------------
 
-These configuration files must be in the same folder as the tool configuration file. There can be as many profiles as you wish, each with different options and default settings. Each file contains all of the user options and default settings for the tool including, where files are kept, which SQL Server to connect to, which SQL Server tables to make available and other general settings. Attributes and settings are presented as nodes (beginning with a start node, e.g. ``<example>``, and finishing with an end note, e.g. ``<\example>``), with the value for the setting held between the ``<value>`` and ``<\value>`` tag. 
+These configuration files must be in the same folder as the tool configuration file. There can be as many profiles as you wish, each with different options and default settings. Each file contains all of the user options and default settings for the tool including where files are kept and other general settings. Attributes and settings are presented as nodes (beginning with a start node, e.g. ``<example>``, and finishing with an end note, e.g. ``<\example>``), with the value for the setting held between the ``<value>`` and ``<\value>`` tag. 
 
 .. note::
 	The XML profiles can have any name prefix as long as they have a '.xml' file extension.
@@ -64,7 +64,7 @@ Once editing has been completed and the edits have been saved, it is recommended
 General attributes
 ******************
 
-The first section of the configuration file deals with a series of general attributes for the Data Searches tool. These general nodes specify where files are kept, how output files should be named and other overall settings. Details on these attributes (and their typical values where known) are given below. The list follows the order within which the attributes are found in the configuration file. This version of the configuration details is valid for the ArcGIS version 2.1 of the Data Searches tool.
+The first section of the configuration file deals with a series of general attributes for the Data Searches tool. These general nodes specify where files are kept, how output files should be named and other overall settings. Details on these attributes (and their typical values where known) are given below. The list follows the order within which the attributes are found in the configuration file. This version of the configuration details is valid for the ArcPro version of the Data Searches tool.
 
 .. note::
 	The enquiry reference takes the form 'LERCName/Year/EnquiryNumber' (e.g. 'XYBRC/2016/001'). Within the configuration file, it is possible to use all or parts of this reference for naming files and folders. The following options are available:
@@ -181,7 +181,7 @@ DefaultAddSelectedLayers
 	The default option for adding the selected layers that should be shown when the form opens. This attribute is the index number of the item in the 'Add Selected Layers to Map' drop-down list, with 1 being the first option. If no value is entered the list box will be hidden and no layers will be added to the map.
 
 _`GroupLayerName`
-	The name of the group layer that will be created in the ArcGIS Table of Contents, under which the results of the data search will be kept. The keywords ``%ref%``, ``%shortref%``, ``%subref%``and ``%sitename%`` are allowed.
+	The name of the group layer that will be created in the ArcGIS Pro active map, under which the results of the data search will be kept. The keywords ``%ref%``, ``%shortref%``, ``%subref%``and ``%sitename%`` are allowed.
 
 OverwriteLabelOptions
 	The options that should be shown in the 'Overwrite Map Labels' drop-down list. These options should not be changed.
@@ -215,7 +215,7 @@ CombinedSitesTable
 Map layer attributes
 ********************
 
-All map layer attributes are found within the ``<MapLayers>`` node. For each data layer that can be included in the searches, a new child node is created that has the name of the layer (e.g. ``<Sites_-_SSSIs>``). This name is name of the layer as it will be shown in the tool menu, and can be different from the layer name as it is shown in the ArcGIS table of contents (which will be set in a subsequent child node).
+All map layer attributes are found within the ``<MapLayers>`` node. For each data layer that can be included in the searches, a new child node is created that has the name of the layer (e.g. ``<Sites_-_SSSIs>``). This name is name of the layer as it will be shown in the tool menu, and can be different from the layer name as it is shown in the ArcGIS Pro active map (which will be set in a subsequent child node).
 
 .. tip::
 	If you wish to display spaces in any layer names in the tool menu use an underscore (``_``) for each space in the node name for the layer. XML does not allow spaces in node names, but the tool will translate these underscores into spaces when the form is opened.
@@ -236,15 +236,15 @@ TableOutputName
 	The TableOutputName will be used to name any tabular file that is exported from this data layer during the search. The keywords ``%ref%``, ``%shortref%``, ``%subref%``and ``%sitename%`` are allowed.
 
 Columns
-	A comma-separated list of columns that should be included in the tabular data exported from this data layer during the search. The column names are case sensitive and should match the column names in the source layer. Area, Distance and Radius columns may be included by adding the keywords 'Area', Distance' and 'Radius' (but note the remark about pre-existing area fields in the `IncludeArea`_ node). If results from any aggregate functions are to be included, they should follow the naming convention that ArcGIS employs for statistics fields, as follows:
+	A comma-separated list of columns that should be included in the tabular data exported from this data layer during the search. The column names are case sensitive and should match the column names in the source layer. Area, Distance and Radius columns may be included by adding the keywords 'Area', Distance' and 'Radius' (but note the remark about pre-existing area fields in the `IncludeArea`_ node). If results from any aggregate functions are to be included, they should follow the naming convention that ArcGIS Pro employs for statistics fields, as follows:
 
 	- Column names are up to 10 characters long and are case sensitive.
 	- Statistics column names are made up of the statistic requested (e.g. COUNT, SUM, MEAN, FIRST, etc.), the underscore character (``_``), and the name of the column to which the statistic applies (e.g. ``COUNT_Year``). Names longer than 10 characters are abbreviated. 
-	- If, due to abbreviation, two output columns would be given the same name, ArcGIS will automatically add a count of ``_1`` to the column name. Where the column name is nine or ten characters long, it will replace the last one or two characters of the second column with ``_1``, always ensuring the length of the column name does not exceed ten characters. 
+	- If, due to abbreviation, two output columns would be given the same name, ArcGIS Pro will automatically add a count of ``_1`` to the column name. Where the column name is nine or ten characters long, it will replace the last one or two characters of the second column with ``_1``, always ensuring the length of the column name does not exceed ten characters. 
 	- Numbering for any subsequent columns with the same name will follow this format adding one to each column number until this number reaches 9. Any subsequent columns will be numbered ``_10``, ``_11`` etc, so adding or replacing up to three rather than two characters in the column name. Again in all cases the new column name will be ten characters long or less.
 
 	.. tip::
-		If you are unsure what the output column names will be from an aggregation operation, run the Dissolve tool (this resides in the ArcGIS toolbox, under Data Management Tools => Generalisation) on a sample of your data, and include the statistics columns with the relevant statistic types as you intend to use them in the Data Searches tool. The output will contain the column names as they will be generated by the Data Searches tool, since it uses the same process.
+		If you are unsure what the output column names will be from an aggregation operation, run the Dissolve tool (this resides in the ArcGIS Pro toolbox, under Data Management Tools => Generalisation) on a sample of your data, and include the statistics columns with the relevant statistic types as you intend to use them in the Data Searches tool. The output will contain the column names as they will be generated by the Data Searches tool, since it uses the same process.
 
 
 _`GroupColumns`
@@ -260,7 +260,7 @@ Criteria
 	Selection criteria that should be used on the data layer during the search. These can be used to, for example, suppress confidential records, report on particular species only, or only include records after a certain date. The criteria take the form ``ColumnName Operand Value`` and may include ``AND`` and ``OR`` statements and similar. String values should be enclosed in single quotes. An example might be ``Name = 'myName' AND Year > 2010``. Only records that match the criteria will be exported.
 
 	.. note::
-		Any clause specified here must adhere to ArcGIS SQL syntax as the clause will be run within ArcGIS.
+		Any clause specified here must adhere to ArcGIS Pro SQL syntax as the clause will be run within ArcGIS.
 
 _`IncludeArea`
 	A Yes/No attribute that defines wether an area calculation should be included in the analysis. If `OutputType`_ is set to``Clip``, areas will be calculated for the clipped polygons. The values are calculated in a column called 'Area' and the results can be added to the tabular output by using the keyword 'Area' in the Columns list. Note that if a column called Area is already present in the input layer, this will be used for the calculations. In this case, it is important to use the correct case for the column name (e.g. if the field is called AREA, the full caps must be maintained). Areas can only be calculated for layers that have polygon topology, and the tool accounts for this.
@@ -289,7 +289,7 @@ _`OutputType`
 	.. note:: This attribute affects area calculations; if it is set to 'Clip', any areas calculated will be those of the clipped area, even if the layer is not kept subsequently.
 
 LoadWarning
-	A Yes/No attribute that defines whether a warning should be issued if this layer is not loaded in ArcGIS.
+	A Yes/No attribute that defines whether a warning should be issued if this layer is not loaded in ArcPro.
 
 PreSelectLayer
 	A Yes/No attribute that defines whether this layer should be highlighted by default when the tool menu is loaded.

@@ -3,7 +3,88 @@ Appendix
 ********
 
 .. index::
+    single: Appendix; Change Log
+    single: Change Log
+
+.. _change_log:
+
+Change Log
+==========
+
+**1.0.7**
+(5th Dec 2024)
+
+    * :guilabel:`New` - Set label properties and visibility from lyrx file
+
+**1.0.6**
+(29th Nov 2024)
+
+    * :guilabel:`Change` - Standardise shared functions
+    * :guilabel:`Change` - Adjust progress bar to count only selected layers
+    * :guilabel:`New` - Apply symbology even when layer file is specified
+    * :guilabel:`Change` - Don't clear/reload form when attribute table is opened/closed
+
+**1.0.5**
+(29th Oct 2024)
+
+    * :guilabel:`New` - Button to expand/contract the map layers list
+    * :guilabel:`New` - Improve load performance
+    * :guilabel:`Change` - Standardise shared functions
+    * :guilabel:`Fix` - Bug where map layer names in user interface are truncated
+
+**1.0.4**
+(12th Aug 2024)
+
+    * :guilabel:`New` - Improved panel layout
+    * :guilabel:`New` - Enable column names to be case insensitive
+    * :guilabel:`Change` - Simplify stats column clause syntax
+    * :guilabel:`New` - Add units to Area column name when created
+    * :guilabel:`Fix` - Bug labelling columns
+
+**1.0.3**
+(9th Aug 2024)
+
+    * :guilabel:`New` - Enable order by fields to sort in ascending or descending order
+    * :guilabel:`New` - Option to output nearest distance and bearing fields using centroid or boundary
+    * :guilabel:`New` - Option to keep selected layers even if not adding to the map
+    * :guilabel:`New` - Add step numbers for each layer being processed to the log file
+    * :guilabel:`Fix` - Bug when checking output, group by and order by fields exist
+    * :guilabel:`Fix` - Bug when columns not found don'r result in an error
+
+**1.0.2**
+(7th Aug 2024)
+
+    * :guilabel:`New` - Display warning when search ref not found in search layers
+    * :guilabel:`New` - Option to pause map during processing
+    * :guilabel:`Improved` - Show notifications upon completion
+    * :guilabel:`Improved` - Improve method of verifying query
+    * :guilabel:`Fix` - Bug not moving output layers to group layer
+    * :guilabel:`Fix` - Bug overwriting combined sites table
+
+**1.0.1**
+(18th Jul 2024)
+
+    * :guilabel:`New` - Hide site name and organisation fields when not required
+    * :guilabel:`New` - Enable process to be cancelled by user
+
+    * :guilabel:`New` - Add new refresh table counts button
+    * :guilabel:`Improved` - Adjust list columns width to size of contents
+
+**1.0.0**
+(11th Jul 2024)
+
+    * Initial version
+
+
+.. raw:: latex
+
+   \newpage
+
+.. index::
+    single: Appendix; XML files
     single: XML files; Example Tool XML file
+
+.. _example_xml:
 
 Example tool XML file
 =====================
@@ -1198,10 +1279,25 @@ ensure the system is configured to their requirements.
 	\newpage
 
 .. index::
+    single: Appendix; Licence
     single: License
+
+.. _licence:
 
 GNU Free Documentation License
 ==============================
+
+Permission is granted to copy, distribute and/or modify this document under 
+the terms of the GNU Free Documentation License, Version 1.3 or any later
+version published by the Free Software Foundation; with no Invariant Sections,
+no Front-Cover Texts and no Back-Cover Texts.  A copy of the license is
+included in the Appendix section.
+
+.. raw:: latex
+
+    The full GNU Free Documentation License can be viewed at `www.gnu.org/licenses/fdl-1.3.en.html <https://www.gnu.org/licenses/fdl-1.3.en.html>`_
+
+.. only:: html
 
 ::
 

@@ -13,12 +13,12 @@ Carrying out data searches (i.e. establishing which protected areas or species a
 To facilitate performing data searches a new interface was developed - the **Data Searches** tool. The tool was originally developed for use with MapInfo for Greenspace Information for Greater London CIC (GiGL) but is now available for use with MapInfo, ArcMap Desktop and ArcGIS Pro (this version) and is used by a number of LERCs.
 
 .. index::
-	single: Tool overview
+	single: Overview
 
 Tool overview
 =============
 
-The Data Searches tool presents a simple user interface, while being configurable in a highly flexible way according to the requirements of the LERC or individual user. It is integrated into the user interface of the GIS system and presented there as a button or menu item. The tool itself has a simple interface (:numref:`figUI`), requiring few user inputs and options. The output files can then be used as inputs into a formatted report.
+The Data Searches tool presents a simple user interface, while being configurable in a highly flexible way according to the requirements of the LERC or individual user. It is integrated into the user interface of the installed GIS application - appearing as an add-in tool button. The tool has a simple interface (:numref:`figUI`), requiring few user inputs and options. The output files can then be used as inputs into a formatted report.
 
 .. _figUI:
 
@@ -33,9 +33,9 @@ The Data Searches tool presents a simple user interface, while being configurabl
 
    \newpage
 
-The tool uses an existing GIS layer (this can be points, lines or polygons) in the interface to find the geographical location of the search request reference. It then queries selected data layers in the active map window to establish which have features within the specified radius of the location, and then exports this information in a format requested by the user. The output data can be both spatial (as new shapefiles) and/or tabular (as TXT or CSV files). The tool creates a log file for each search which details the steps that were taken during the process. The process is discussed in this document in the section on :doc:`Running the tool <../execute/execute>`.
+The tool uses an existing GIS layer (this can be points, lines or polygons) in the interface to find the geographical location of the search request reference. It then queries selected data layers in the active map window to establish which have features within the specified radius of the location, and then exports this information in a format requested by the user. The output data can be both spatial (as new shapefiles) and/or tabular (as TXT or CSV files). The tool creates a log file for each search which details the steps that were taken during the process. The process is discussed in the section on :doc:`Running the tool <../execute/execute>`.
 
-Defining the way that searches should be carried out, the output that they generate, and the layers that can potentially be included in a search is done via a user configuration file written in XML. Using this document the user can configure all the parts of the search, for example:
+Defining the way that searches should be carried out, the output that they generate, and the layers that can potentially be included in a search is done via a user configuration file written in XML. Using this file the user can configure all the parts of the search, for example:
 
 * The name of the geographic layer containing the search references, and its key columns.
 * The location of the output folder.
@@ -44,15 +44,15 @@ Defining the way that searches should be carried out, the output that they gener
 * For each data layer, a detailed definition of how features should be selected and what data should be output from it.
 * Details on the display and labelling of outputs from individual data layers.
 
-Using this configuration file, each individual LERC can tailor the Data Searches tool to its individual requirements. An examples of the XML file is included in the :doc:`Appendix <../appendix/appendix>`, and the process of setting up this file is discussed in the section on :doc:`Setting up the tool <../setup/setup>`.
+An example of the XML file is included in the :doc:`Appendix <../appendix/appendix>`, and the process of setting up this file is discussed in the section on :doc:`Setting up the tool <../setup/setup>`.
 
 .. index::
-	single: Benefits
+	single: Overview; Benefits
 
 Benefits
 ========
 
-There are a number of clear benefits to using the Data Searches tool for carrying out routine data searches. 
+There are a number of clear benefits to using the Data Searches tool for carrying out routine data searches.
 
 1. The tool, by encapsulating and automating the process, saves considerable time over carrying out these searches manually.
 #. Both the process and the outputs of the search are standardised, therefore minimising the risk of user error that is present in a manual search.

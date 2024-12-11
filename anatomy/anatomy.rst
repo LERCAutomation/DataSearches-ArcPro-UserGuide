@@ -27,12 +27,13 @@ Exporting the results
 Repeating the process
 	For statutory reasons the search radius may vary between (for example) protected sites and protected species. In this case the search needs to be repeated with a new buffer layer each time.
 
+
 .. raw:: latex
 
    \newpage
 
 .. index::
-	single: Tool components
+	single: Tool; Components
 
 The Data Searches tool
 ======================
@@ -44,7 +45,7 @@ There are four component parts to the Data Searches tool that work together to a
 #. One or more user XML profiles that specifies how the tool is set up and how data will be saved by default.
 #. The Data Searches tool ArcGIS Pro add-in.
 
-The Data Searches tool is used within a GIS environment and requires all the required data layers to be preloaded in the GIS (see :numref:`figInterfaceAnnotated`). 
+The Data Searches tool is used within a GIS environment and requires all the required data layers to be preloaded in the active map (see :numref:`figInterfaceAnnotated`). 
 
 .. _figInterfaceAnnotated:
 
@@ -58,6 +59,9 @@ The Data Searches tool is used within a GIS environment and requires all the req
 .. raw:: latex
 
    \newpage
+
+.. index::
+	single: Tool; Workflow
 
 Tool workflow
 -------------
@@ -103,10 +107,10 @@ In essence, the process that the tool follows is identical to the manual search 
    \newpage
 
 .. index::
-	single: Tool outputs
+	single: Tool; Outputs
 
 Tool outputs
-============
+------------
 
 Below is an example of the GIS outputs generated from a data search (:numref:`figGISOutputExample`).
 
@@ -125,8 +129,7 @@ Below is an example of the GIS outputs generated from a data search (:numref:`fi
 
    \newpage
 
-Output folder
--------------
+**Output folder**
 
 All the GIS and tabular outputs from the tool are stored in a user defined folder (:numref:`figOutputFolderExample`). These outputs **may** include one or more of the following:
 
@@ -149,8 +152,7 @@ All the GIS and tabular outputs from the tool are stored in a user defined folde
 
    \newpage
 
-Output files
-------------
+**Output files**
 
 GIS layers can be produced, either as an aid to generating maps for the data search or for sending to the requester. GIS layers can also be created containing the original search feature and the buffered search area used for the search.
 

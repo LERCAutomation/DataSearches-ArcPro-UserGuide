@@ -88,14 +88,25 @@ Related community links:
 Acknowledgements
 ================
 
-Many thanks are due to all the LERCs in the south-east of England and their staff who have, and continue to, fund and contribute to the Data Searches tool.  It takes many developers, testers and users to build a truly useful tool (especially users who care enough to test new releases, report bugs and discuss feature requests).
+The DataSearches tool was developed with funding from:
 
+* Greenspace Information for Greater London CIC
+* Thames Valley Environmental Records Centre
+* Sussex Biodiversity Records Centre
+* Surrey Biodiversity Information Centre
+
+Many thanks are due to all the LERCs and their staff who have, and continue to, fund and contribute towards the DataSearches tool.
+
+
+.. raw:: latex
+
+	\newpage
 
 .. index::
-	single: Conventions used in this user guide
+	single: Conventions used in this guide
 
-Conventions used in this user guide
-===================================
+Conventions used in this guide
+==============================
 
 The following typographical conventions are used in this manual:
 
@@ -116,9 +127,9 @@ The following typographical conventions are used in this manual:
 
 .. seealso::
 	References and/or links to other sections of this guide.
+
 .. note::
 	Notes explain things in more detail or highlight important points.
 
 .. caution::
 	Warnings where users should pay attention.
-

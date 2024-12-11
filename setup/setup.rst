@@ -5,12 +5,15 @@ Setting up the tool
 Before the Data Searches tool will function, it needs to be installed and configured. It is recommended that the configuration is carried out first, although the steps are interchangeable. 
 
 .. index::
-	single: Configuring the tool
+	single: Configuration
 
 Configuring the tool
 ====================
 
 There are two configuration files used by the tool. They must be in the same folder.
+
+.. index::
+	single: Configuration; Tool configuration file
 
 Tool configuration file
 -----------------------
@@ -28,6 +31,9 @@ HelpURL
 
 .. caution:: 
 	The name of this configuration file must be 'DataSearches.xml'. The tool will not load if the file is not found.
+
+.. index::
+	single: Configuration; User configuration files
 
 User configuration profiles
 ---------------------------
@@ -59,7 +65,7 @@ Once editing has been completed and the edits have been saved, it is recommended
    \newpage
 
 .. index::
-	single: General attributes
+	single: Configuration; User configuration; General attributes
 
 General attributes
 ******************
@@ -210,7 +216,7 @@ CombinedSitesTable
 
 
 .. index::
-	single: Map layer attributes
+	single: Configuration; User configuration; Map layer attributes
 
 Map layer attributes
 ********************
@@ -372,8 +378,11 @@ Installing the tool
 Installing the tool in ArcGIS Pro is straightforward. There are two ways it can be installed:
 
 .. note::
-	Before installing the tool you will need to install another ArcGIS Pro add-in 'DataToolbar'. This add-in with simply create a new 'Tools' toolbar onto which the Data Selector tool and other Data tools will be added once installed. To install the toolbar follow the instructions below using  the DataToolbar add-in.
+	Before installing the tool you will need to install another ArcGIS Pro add-in 'DataToolbar'. This add-in with simply create a new 'Tools' toolbar onto which the Data Searches tool and other Data tools will be added once installed. To install the toolbar follow the instructions below using the DataToolbar add-in.
 
+
+.. index::
+	single: Installation; via Windows Explorer
 
 Installation through Windows Explorer
 -------------------------------------
@@ -413,6 +422,9 @@ Once it is installed, it will appear in the Add-In Manager and on the 'Tools' me
 .. raw:: latex
 
    \newpage
+
+.. index::
+	single: Installation; within ArcGIS Pro
 
 Installation from within ArcGIS Pro
 -----------------------------------
@@ -456,4 +468,3 @@ After restarting ArcGIS Pro the tool will show in the Add-In Manager (:numref:`f
 
 .. note::
 	The 'Tools' menu bar will only appear once the DataToolbar add-in has also been installed.
-

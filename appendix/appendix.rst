@@ -35,7 +35,7 @@ Change Log
 **1.0.4**
 (12th Aug 2024)
 
-    * :guilabel:`New` - Improved panel layout
+    * :guilabel:`New` - Improve panel layout
     * :guilabel:`New` - Enable column names to be case insensitive
     * :guilabel:`Change` - Simplify stats column clause syntax
     * :guilabel:`New` - Add units to Area column name when created
@@ -49,7 +49,7 @@ Change Log
     * :guilabel:`New` - Option to keep selected layers even if not adding to the map
     * :guilabel:`New` - Add step numbers for each layer being processed to the log file
     * :guilabel:`Fix` - Bug when checking output, group by and order by fields exist
-    * :guilabel:`Fix` - Bug when columns not found don'r result in an error
+    * :guilabel:`Fix` - Bug when columns not found don't result in an error
 
 **1.0.2**
 (7th Aug 2024)

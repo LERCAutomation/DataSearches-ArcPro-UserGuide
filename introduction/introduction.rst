@@ -47,7 +47,7 @@ Defining the way that searches should be carried out, the output that they gener
 An example of the XML file is included in the :doc:`Appendix <../appendix/appendix>`, and the process of setting up this file is discussed in the section on :doc:`Setting up the tool <../setup/setup>`.
 
 .. index::
-	single: Overview; Benefits
+	single: Benefits
 
 Benefits
 ========

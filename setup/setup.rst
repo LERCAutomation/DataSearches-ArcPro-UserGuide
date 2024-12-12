@@ -344,7 +344,7 @@ _`CombinedSitesOrderByColumns`
 
 
 .. index::
-	single: Special characters in XML
+	single: Configuration; Special characters in XML
 
 .. raw:: latex
 

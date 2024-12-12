@@ -33,6 +33,7 @@ Repeating the process
    \newpage
 
 .. index::
+	single: Tool
 	single: Tool; Components
 
 The Data Searches tool

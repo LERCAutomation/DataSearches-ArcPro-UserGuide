@@ -12,6 +12,23 @@ Appendix
 Change Log
 ==========
 
+**1.0.10**
+(6th Jan 2025)
+
+    * :guilabel:`Improved` - Extra error handling when updating search layer
+    * :guilabel:`Fix` - Ensure XML profiles are not repeated
+    * :guilabel:`Fix` - Report errors when adding search area and buffer to map
+
+**1.0.9**
+(17th Dec 2024)
+
+    * :guilabel:`Change` - Always open log file after errors
+
+**1.0.8**
+(12th Dec 2024)
+
+    * :guilabel:`Change` - Use comma separator for txt output files
+
 **1.0.7**
 (5th Dec 2024)
 

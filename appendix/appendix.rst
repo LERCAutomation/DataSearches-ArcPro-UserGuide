@@ -12,6 +12,12 @@ Appendix
 Change Log
 ==========
 
+**1.0.11**
+(14th Jan 2025)
+
+    * :guilabel:`Changed` - Checkboxes styles now match ArcGIS Pro style
+    * :guilabel:`Changed` - Standardised shared functions
+
 **1.0.10**
 (6th Jan 2025)
 

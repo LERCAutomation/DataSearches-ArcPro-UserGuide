@@ -13,8 +13,9 @@ Change Log
 ==========
 
 **1.0.12**
-(16th Feb 2025)
+(17th Feb 2025)
     * :guilabel:`Improved` - New config variable to output GIS files to separate sub-folder
+    * :guilabel:`Fix` - Ensure search area and buffer are always added to map if kept
     * :guilabel:`Fix` - Possible error when outputting if GIS layers not added to map
 
 **1.0.11**

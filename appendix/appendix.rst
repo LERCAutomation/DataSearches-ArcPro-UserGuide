@@ -12,6 +12,20 @@ Appendix
 Change Log
 ==========
 
+**1.0.13**
+(11th Apr 2025)
+    * :guilabel:`New` - New config variable <SearchMapName> for the name of the map window containing the search area layer
+    * :guilabel:`New` - New config variable <MapNames> for the map window names for all maps
+    * :guilabel:`New` - New config variable <LayoutNames> for the layout window names for all layouts
+    * :guilabel:`New` - New config variable <ZoomScales> for a list of zoom scales to use for all layouts
+    * :guilabel:`New` - New MapLayers config variable <MapName> for the name of the map window to add output the layer to
+    * :guilabel:`New` - Add buffer and search area to all map windows, if required
+    * :guilabel:`New` - Add kept outputs to specified map window for each layer
+    * :guilabel:`New` - Set search reference, site name, organisation and radius text elements in all layout windows
+    * :guilabel:`New` - Zoom to buffer or search area, at next largest zoom scale, in all layout windows
+    * :guilabel:`Improved` - Zoom to buffer or search area in all map windows
+    * :guilabel:`Fix` - Display and set form comboboxes correctly when default values are blank
+
 **1.0.12**
 (17th Feb 2025)
     * :guilabel:`Improved` - New config variable to output GIS files to separate sub-folder

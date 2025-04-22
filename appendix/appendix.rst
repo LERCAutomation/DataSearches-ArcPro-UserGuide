@@ -12,6 +12,10 @@ Appendix
 Change Log
 ==========
 
+**1.1.1**
+(22th Apr 2025)
+    * :guilabel:`Improved` - Add %organisation% as variable for output folders, files, etc.
+
 **1.1.0**
 (15th Apr 2025)
     * :guilabel:`New` - Added config variables: SearchMapName, MapNames, LayoutNames, SearchRefElement, SiteNameElement, OrganisationElement, RadiusElement, BespokeElements, ZoomRatio and ZoomScales

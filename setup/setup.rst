@@ -73,7 +73,7 @@ General attributes
 The first section of the configuration file deals with a series of general attributes for the Data Searches tool. These general nodes specify where files are kept, how output files should be named and other overall settings. Details on these attributes (and their typical values where known) are given below. The list follows the order within which the attributes are found in the configuration file. This version of the configuration details is valid for the ArcPro version of the Data Searches tool.
 
 .. note::
-	The enquiry reference takes the form 'LERCName/Year/EnquiryNumber' (e.g. 'XYBRC/2016/001'). Within the configuration file, it is possible to use all or parts of this reference for naming files and folders. The following options are available:
+	The enquiry reference may take the form 'LERCName/Year/EnquiryNumber' (e.g. 'XYBRC/2016/001'). Within the configuration file, it is possible to use all or parts of this reference for naming files and folders. The following options are available:
 
 	- ``%ref%`` uses the full enquiry reference.
 	- ``%shortref%`` uses the numeric part of the reference (e.g. '2016/001').
@@ -115,16 +115,16 @@ SaveRootDir
 	The file location where all data search folders are stored.
  
 SaveFolder
-	The name of the folder that will be created for each search. The keywords ``%ref%``, ``%shortref%``, ``%subref%``, ``%sitename%`` and ``%radius%`` are allowed as well as all date format variables (e.g. ``%dd%``, ``%mm%``, etc.)
+	The name of the folder that will be created for each search. Supports recognised keywords wrapped in ``%``, e.g. ``%ref%``.
 
 ExtractFolder
-	The name of the folder where all data search extracts will be written to. This folder will be created in the SaveFolder. The keywords ``%ref%``, ``%shortref%``, ``%subref%``, ``%sitename%`` and ``%radius%`` are allowed as well as all date format variables (e.g. ``%dd%``, ``%mm%``, etc.)
+	The name of the folder where all data search extracts will be written to. This folder will be created in the SaveFolder. Supports recognised keywords wrapped in ``%``, e.g. ``%ref%``.
 
 GISFolder
-	The name of the folder where all data search GIS files will be saved to. This folder will be created in the SaveFolder. The keywords ``%ref%``, ``%shortref%``, ``%subref%``, ``%sitename%`` and ``%radius%`` are allowed as well as all date format variables (e.g. ``%dd%``, ``%mm%``, etc.)
+	The name of the folder where all data search GIS files will be saved to. This folder will be created in the SaveFolder. Supports recognised keywords wrapped in ``%``, e.g. ``%ref%``.
 
 LogFileName
-	The name of the log file that will be created during processing. The keywords ``%ref%``, ``%shortref%``, ``%subref%``, ``%sitename%`` and ``%radius%`` are allowed as well as all date format variables (e.g. ``%dd%``, ``%mm%``, etc.)
+	The name of the log file that will be created during processing. Supports recognised keywords wrapped in ``%``, e.g. ``%ref%``.
 
 PauseMap
 	A Yes/No attribute that defines whether the map processing should be paused during processing?
@@ -145,13 +145,13 @@ KeepBufferArea
 	A Yes/No attribute that defines whether a GIS file of the buffer area should be kept.
 
 BufferPrefix
-	The prefix output name for the buffer GIS file. The size of the buffer will be added automatically. The keywords ``%ref%``, ``%shortref%``, ``%subref%``, ``%sitename%`` and ``%radius%`` are allowed.
+	The prefix output name for the buffer GIS file. The size of the buffer will be added automatically. Supports recognised keywords wrapped in ``%``, e.g. ``%ref%``.
 
 BufferLayerFile
 	The name of the layer file (kept in the `LayerFolder`_) which will be used to symbolise the buffer layer. Must include the ``.lyrx`` extension.
 
 SearchLayer
-	The name of the data searches GIS layer in the interface. There may be either a single search layer (of either points, polygons or lines) of this name, or there may be multiple search layers present (e.g. one of each format) in which case their names should begin with the SearchLayer entry. See :numref:`figInterfaceAnnotated` for an example. In the case of this example, the entry for this node is ``Enquiry_Site`` and the `SearchLayerExtensions`_ entry (see next attribute) is ``_Point;_Line;_Poly``. 
+	The name of the data searches GIS layer in the interface. There may be either a single search layer (of either points, polygons or lines) of this name, or there may be multiple search layers present (e.g. one of each format) in which case their names should begin with the SearchLayer entry. See :numref:`figInterfaceAnnotated` for an example. In the case of this example, the entry for this node is ``Enquiry_Site`` and the `SearchLayerExtensions`_ entry (see next attribute) is ``_Point;_Line;_Poly``.
 
 _`SearchLayerExtensions`
 	If multiple search layers are used, this node should contain a list of the extensions for each layer, delimited by semicolons (e.g. in the example used above, the entry was ``_point;_poly;_line``). If only a single layer is used this attribute should be left blank.
@@ -190,7 +190,7 @@ RadiusElement
 	The text element name in each layout used to store the radius (including units).
 
 BespokeElements
-	The text element names and contents in each layout used to store any bespoke text (e.g. Bespoke;Land at %sitename% + %radius%). Name and contents must be divided by ';'. Multiple entries must be divided by '$'. The keywords ``%ref%``, ``%shortref%``, ``%subref%``, ``%sitename%`` and ``%radius%`` are allowed as well as all date format variables (e.g. ``%dd%``, ``%mm%``, etc.)
+	The text element names and contents in each layout used to store any bespoke text (e.g. Bespoke;Land at %sitename% + %radius%). Name and contents must be divided by ';'. Multiple entries must be divided by '$'. Supports recognised keywords wrapped in ``%``, e.g. ``%ref%``.
 
 ZoomRatio
 	The ratio that map and layout windows will be zoomed out after zooming to a layer extent.
@@ -202,7 +202,7 @@ KeepSearchFeature
 	A Yes/No attribute defining whether the feature used in the search should be kept as a GIS file.
 
 SearchOutputName
-	The name of the GIS file that the search feature should be exported to. The keywords ``%ref%``, ``%shortref%``, ``%subref%``and ``%sitename%`` are allowed.
+	The name of the GIS file that the search feature should be exported to. Supports recognised keywords wrapped in ``%``, e.g. ``%ref%``.
 
 SearchSymbologyBase
 	The base name of the search layer symbology file (without the ``.lyrx`` extension). Note the relevant extension (from `SearchLayerExtensions`_) will be added. This layer file is used to set the symbology for the saved feature.
@@ -217,7 +217,7 @@ DefaultAddSelectedLayers
 	The default option for adding the selected layers to the map. This attribute is the index number of the item in the 'Add Layers to Map' drop-down list, with 1 being the first option. Options are: No;Yes - Without labels;Yes - With labels. If no value is entered the list box will be hidden and no layers will be added to the map.
 
 _`GroupLayerName`
-	The name of the group layer that will be created in the ArcGIS Pro active map, under which the results of the data search will be kept. The keywords ``%ref%``, ``%shortref%``, ``%subref%``and ``%sitename%`` are allowed.
+	The name of the group layer that will be created in the ArcGIS Pro active map, under which the results of the data search will be kept. Supports recognised keywords wrapped in ``%``, e.g. ``%ref%``.
 
 DefaultOverwriteLabels
 	The default option for overwriting the map labels. This attribute is the index number of the item in the 'Overwrite Labels' drop-down list, with 1 being the first option. Options are: No;Yes - Reset Each Layer;Yes - Reset Each Group;Yes - Do Not Reset. If no value is entered the list box will be hidden and labels will not be overwritten.
@@ -232,12 +232,15 @@ CombinedSitesTable
 	This section defines the combined sites table. It has the following entries:
 	
 	Name
-		The name of the combined sites table. The keywords ``%ref%``, ``%shortref%``, ``%subref%``and ``%sitename%`` are allowed.
+		The name of the combined sites table. Supports recognised keywords wrapped in ``%``, e.g. ``%ref%``.
 	Columns
 		A comma-delimited list of the column headings that the combined sites table should have.
 	Format
 		The format that the combined sites table should have. Choose from ``csv`` or ``txt``.
 
+
+.. note::
+	The following keywords are recognised: ``%ref%``, ``%shortref%``, ``%subref%``, ``%sitename%``, ``%radius%``, ``%organisation%``, as well as the following format variables: ``%dd%``, ``%mm%``, ``%mmm%``, ``%mmmm%``, ``%yy%``, ``%yyyy%``, ``%qq%``, ``%ffff%``)
 
 .. index::
 	single: Configuration; User configuration; Map layer attributes

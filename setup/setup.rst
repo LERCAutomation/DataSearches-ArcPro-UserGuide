@@ -240,7 +240,7 @@ CombinedSitesTable
 
 
 .. note::
-	The following keywords are recognised: ``%ref%``, ``%shortref%``, ``%subref%``, ``%sitename%``, ``%radius%``, ``%organisation%``, as well as the following format variables: ``%dd%``, ``%mm%``, ``%mmm%``, ``%mmmm%``, ``%yy%``, ``%yyyy%``, ``%qq%``, ``%ffff%``)
+	The following keywords are recognised: ``%ref%``, ``%shortref%``, ``%subref%``, ``%sitename%``, ``%radius%``, ``%organisation%``, as well as the following format variables: ``%dd%``, ``%mm%``, ``%mmm%``, ``%mmmm%``, ``%yy%``, ``%yyyy%``, ``%qq%``, ``%ffff%``.
 
 .. index::
 	single: Configuration; User configuration; Map layer attributes

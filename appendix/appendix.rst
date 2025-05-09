@@ -12,6 +12,12 @@ Appendix
 Change Log
 ==========
 
+**1.1.2**
+(9th May 2025)
+    * :guilabel:`New` - Added config variable to convert labels to annotation
+    * :guilabel:`Changed` - Move temporary GDB to output folder and use with annotations
+    * :guilabel:`Fix` - Bug setting %ref% in layouts
+
 **1.1.1**
 (22th Apr 2025)
     * :guilabel:`Improved` - Add %organisation% as variable for output folders, files, etc.
@@ -458,6 +464,11 @@ ensure the system is configured to their requirements.
         <DefaultOverwriteLabels>
             <value>1</value>
         </DefaultOverwriteLabels>
+
+	<!-- Should all map labels be converted to annotation? Yes/No -->
+	<ConvertLabelsToAnnotation>
+		<value>Yes</value>
+	</ConvertLabelsToAnnotation>
 
         <!-- The units any area measurements will be done in. Choose from Ha, Km2, m2. Default is Ha. -->
         <AreaMeasurementUnit>

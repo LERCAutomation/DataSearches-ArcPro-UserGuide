@@ -12,10 +12,20 @@ Appendix
 Change Log
 ==========
 
+**1.1.3**
+(21st May 2025)
+    * :guilabel:`Changed` - Changed config variable KeepSearchFeature to KeepSearchFeatureExtensions
+    * :guilabel:`Improved` - Optionally add search features to map based on extension type
+    * :guilabel:`Improved` - Create new annotations group layer rather than overwrite existing group
+    * :guilabel:`Fix` - Bug when bespoke text element is blank
+    * :guilabel:`Fix` - Bug when combined sites table name is blank
+    * :guilabel:`Fix` - Bug when field aliases are null
+
 **1.1.2**
 (9th May 2025)
-    * :guilabel:`New` - Added config variable to convert labels to annotation
-    * :guilabel:`Changed` - Move temporary GDB to output folder and use with annotations
+    * :guilabel:`New` - Compiled for ArcGIS Pro 3.4 onwards
+    * :guilabel:`New` - Added config variable ConvertLabelsToAnnotation to convert labels to annotation
+    * :guilabel:`Changed` - Create temporary GDB in output folder for use with annotations
     * :guilabel:`Fix` - Bug setting %ref% in layouts
 
 **1.1.1**
@@ -420,10 +430,11 @@ ensure the system is configured to their requirements.
             <value>2500;5000;7500;10000;12500;15000;20000</value>
         </ZoomScales>    
 
-        <!-- Are we keeping the search feature as a layer? Yes/No -->
-        <KeepSearchFeature>
-            <value>No</value>
-        </KeepSearchFeature>
+        <!-- The extension names of search features to keep.
+        Leave blank to not keep any. -->
+        <KeepSearchFeatureExtensions>
+                <value>_region;_polyline</value>
+        </KeepSearchFeatureExtensions>
 
         <!-- The name of the search feature output layer. -->
         <SearchOutputName>
@@ -467,7 +478,7 @@ ensure the system is configured to their requirements.
 
 	<!-- Should all map labels be converted to annotation? Yes/No -->
 	<ConvertLabelsToAnnotation>
-		<value>Yes</value>
+		<value>No</value>
 	</ConvertLabelsToAnnotation>
 
         <!-- The units any area measurements will be done in. Choose from Ha, Km2, m2. Default is Ha. -->
@@ -759,7 +770,6 @@ ensure the system is configured to their requirements.
                 <CombinedSitesOrderByColumns>
                     <value>SAC_Name</value>
                 </CombinedSitesOrderByColumns>
-
             </Sites_-_SACs>
             <Sites_-_SPAs>
                 <LayerName>

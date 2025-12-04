@@ -12,8 +12,25 @@ Appendix
 Change Log
 ==========
 
+**1.1.7**
+(02Dec2025)
+    * :guilabel:`Improved` - Overwrite calculated area column when it already exists
+
+**1.1.6**
+(02Sep2025)
+    * :guilabel:`Improved` - Ensure all listed columns that are missing are reported
+
+**1.1.5**
+(04Aug2025)
+    * :guilabel:`Improved` - Enable use of date references (e.g. '%dd%') in SaveRootDir, CombinedSitesTableName, SearchLayerName andGroupLayerName
+    * :guilabel:`Fix` - Fix bugs when some input variables are blank
+
+**1.1.4**
+(09Jul2025)
+    * :guilabel:`Changed` - New config variable, TempDir, to specify location of temporary GDB
+
 **1.1.3**
-(21st May 2025)
+(21May2025)
     * :guilabel:`Changed` - Changed config variable KeepSearchFeature to KeepSearchFeatureExtensions
     * :guilabel:`Improved` - Optionally add search features to map based on extension type
     * :guilabel:`Improved` - Create new annotations group layer rather than overwrite existing group
@@ -22,18 +39,18 @@ Change Log
     * :guilabel:`Fix` - Bug when field aliases are null
 
 **1.1.2**
-(9th May 2025)
+(9May2025)
     * :guilabel:`New` - Compiled for ArcGIS Pro 3.4 onwards
     * :guilabel:`New` - Added config variable ConvertLabelsToAnnotation to convert labels to annotation
     * :guilabel:`Changed` - Create temporary GDB in output folder for use with annotations
     * :guilabel:`Fix` - Bug setting %ref% in layouts
 
 **1.1.1**
-(22th Apr 2025)
+(22Apr2025)
     * :guilabel:`Improved` - Add %organisation% as variable for output folders, files, etc.
 
 **1.1.0**
-(15th Apr 2025)
+(15Apr2025)
     * :guilabel:`New` - Added config variables: SearchMapName, MapNames, LayoutNames, SearchRefElement, SiteNameElement, OrganisationElement, RadiusElement, BespokeElements, ZoomRatio and ZoomScales
     * :guilabel:`New` - Added <MapLayers> config variable: MapName
     * :guilabel:`New` - Add buffer and search area to all map windows, if required
@@ -46,41 +63,41 @@ Change Log
     * :guilabel:`Removed` - Removed config variables: BufferUnitOptions, AddSelectedLayersOptions, OverwriteLabelOptions, CombinedSitesTableOptions
 
 **1.0.12**
-(17th Feb 2025)
+(17Feb2025)
     * :guilabel:`Changed` - Added config variable 'GISFolder' to output GIS files to separate sub-folder
     * :guilabel:`Fix` - Ensure search area and buffer are always added to map if kept
     * :guilabel:`Fix` - Possible error when outputting if GIS layers not added to map
 
 **1.0.11**
-(14th Jan 2025)
+(14Jan2025)
 
     * :guilabel:`Changed` - Checkboxes styles now match ArcGIS Pro style
     * :guilabel:`Changed` - Standardised shared functions
 
 **1.0.10**
-(6th Jan 2025)
+(6Jan2025)
 
     * :guilabel:`Improved` - Extra error handling when updating search layer
     * :guilabel:`Fix` - Ensure XML profiles are not repeated
     * :guilabel:`Fix` - Report errors when adding search area and buffer to map
 
 **1.0.9**
-(17th Dec 2024)
+(17Dec2024)
 
     * :guilabel:`Change` - Always open log file after errors
 
 **1.0.8**
-(12th Dec 2024)
+(12Dec2024)
 
     * :guilabel:`Change` - Use comma separator for txt output files
 
 **1.0.7**
-(5th Dec 2024)
+(5Dec2024)
 
     * :guilabel:`New` - Set label properties and visibility from lyrx file
 
 **1.0.6**
-(29th Nov 2024)
+(29Nov2024)
 
     * :guilabel:`Change` - Standardise shared functions
     * :guilabel:`Change` - Adjust progress bar to count only selected layers
@@ -88,7 +105,7 @@ Change Log
     * :guilabel:`Change` - Don't clear/reload form when attribute table is opened/closed
 
 **1.0.5**
-(29th Oct 2024)
+(29Oct2024)
 
     * :guilabel:`New` - Button to expand/contract the map layers list
     * :guilabel:`New` - Improve load performance
@@ -96,7 +113,7 @@ Change Log
     * :guilabel:`Fix` - Bug where map layer names in user interface are truncated
 
 **1.0.4**
-(12th Aug 2024)
+(12Aug2024)
 
     * :guilabel:`New` - Improve panel layout
     * :guilabel:`New` - Enable column names to be case insensitive
@@ -105,7 +122,7 @@ Change Log
     * :guilabel:`Fix` - Bug labelling columns
 
 **1.0.3**
-(9th Aug 2024)
+(9Aug2024)
 
     * :guilabel:`New` - Enable order by fields to sort in ascending or descending order
     * :guilabel:`New` - Option to output nearest distance and bearing fields using centroid or boundary
@@ -115,7 +132,7 @@ Change Log
     * :guilabel:`Fix` - Bug when columns not found don't result in an error
 
 **1.0.2**
-(7th Aug 2024)
+(7Aug2024)
 
     * :guilabel:`New` - Display warning when search ref not found in search layers
     * :guilabel:`New` - Option to pause map during processing
@@ -125,7 +142,7 @@ Change Log
     * :guilabel:`Fix` - Bug overwriting combined sites table
 
 **1.0.1**
-(18th Jul 2024)
+(18Jul2024)
 
     * :guilabel:`New` - Hide site name and organisation fields when not required
     * :guilabel:`New` - Enable process to be cancelled by user
@@ -134,7 +151,7 @@ Change Log
     * :guilabel:`Improved` - Adjust list columns width to size of contents
 
 **1.0.0**
-(11th Jul 2024)
+(11Jul2024)
 
     * Initial version
 
@@ -306,6 +323,11 @@ ensure the system is configured to their requirements.
             <value>GIS Files</value>
         </GISFolder>
 
+        <!-- The file location where the temporary working geodatabase will be created. -->
+        <TempDir>
+      	    <value>C:\temp\ArcGIS Pro</value>
+        </TempDir>
+
         <!-- The log file name created by the tool to output messages. -->
         <LogFileName>
             <value>DataSearch_%subref%.log</value>
@@ -337,7 +359,7 @@ ensure the system is configured to their requirements.
             <value>3</value>
         </DefaultBufferUnit>
 
-        <!-- Are we keeping the buffer GIS file? Yes/No. -->
+        <!-- Are we adding the buffer layer to the map(s)? Yes/No. -->
         <KeepBufferArea>
             <value>Yes</value>
         </KeepBufferArea>
@@ -430,12 +452,6 @@ ensure the system is configured to their requirements.
             <value>2500;5000;7500;10000;12500;15000;20000</value>
         </ZoomScales>    
 
-        <!-- The extension names of search features to keep.
-        Leave blank to not keep any. -->
-        <KeepSearchFeatureExtensions>
-                <value>_region;_polyline</value>
-        </KeepSearchFeatureExtensions>
-
         <!-- The name of the search feature output layer. -->
         <SearchOutputName>
             <value>SearchArea_%subref%</value>
@@ -446,6 +462,12 @@ ensure the system is configured to their requirements.
         <SearchSymbologyBase>
             <value>FeatureSymbology</value>
         </SearchSymbologyBase>
+
+        <!-- The extension names of search features to  add to the map(s).
+        Leave blank to not keep any. -->
+        <KeepSearchFeatureExtensions>
+                <value>_region;_polyline</value>
+        </KeepSearchFeatureExtensions>
 
         <!-- The buffer aggregate column values. Delimited with semicolons. -->
         <AggregateColumns>

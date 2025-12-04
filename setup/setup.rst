@@ -123,6 +123,9 @@ ExtractFolder
 GISFolder
 	The name of the folder where all data search GIS files will be saved to. This folder will be created in the SaveFolder. Supports recognised keywords wrapped in ``%``, e.g. ``%ref%``.
 
+TempDir
+	The file location where the temporary working geodatabase will be created.
+
 LogFileName
 	The name of the log file that will be created during processing. Supports recognised keywords wrapped in ``%``, e.g. ``%ref%``.
 

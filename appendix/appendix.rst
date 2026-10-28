@@ -3,14 +3,24 @@ Appendix
 ********
 
 .. index::
-    single: Appendix; Change Log
     single: Appendix
+    single: Appendix; Change Log
     single: Change Log
 
 .. _change_log:
 
 Change Log
 ==========
+
+**1.1.9**
+(28Oct2026)
+    * :guilabel:`Improved` - A summary of the selected search options is now written to the log at the start of each run
+    * :guilabel:`Fixed` - Form controls are now correctly refreshed when a search finishes
+
+**1.1.8**
+(22Jan2026)
+    * :guilabel:`Improved` - Exclude native ArcGIS Pro messages from logfile
+    * :guilabel:`Improved` - Include app version and XML profile in log file
 
 **1.1.7**
 (02Dec2025)
@@ -23,7 +33,7 @@ Change Log
 **1.1.5**
 (04Aug2025)
     * :guilabel:`Improved` - Enable use of date references (e.g. '%dd%') in SaveRootDir, CombinedSitesTableName, SearchLayerName andGroupLayerName
-    * :guilabel:`Fix` - Fix bugs when some input variables are blank
+    * :guilabel:`Fixed` - Bugs when some input variables are blank
 
 **1.1.4**
 (09Jul2025)
@@ -34,16 +44,16 @@ Change Log
     * :guilabel:`Changed` - Changed config variable KeepSearchFeature to KeepSearchFeatureExtensions
     * :guilabel:`Improved` - Optionally add search features to map based on extension type
     * :guilabel:`Improved` - Create new annotations group layer rather than overwrite existing group
-    * :guilabel:`Fix` - Bug when bespoke text element is blank
-    * :guilabel:`Fix` - Bug when combined sites table name is blank
-    * :guilabel:`Fix` - Bug when field aliases are null
+    * :guilabel:`Fixed` - Bug when bespoke text element is blank
+    * :guilabel:`Fixed` - Bug when combined sites table name is blank
+    * :guilabel:`Fixed` - Bug when field aliases are null
 
 **1.1.2**
 (9May2025)
     * :guilabel:`New` - Compiled for ArcGIS Pro 3.4 onwards
     * :guilabel:`New` - Added config variable ConvertLabelsToAnnotation to convert labels to annotation
     * :guilabel:`Changed` - Create temporary GDB in output folder for use with annotations
-    * :guilabel:`Fix` - Bug setting %ref% in layouts
+    * :guilabel:`Fixed` - Bug setting %ref% in layouts
 
 **1.1.1**
 (22Apr2025)
@@ -59,14 +69,14 @@ Change Log
     * :guilabel:`New` - Zoom to buffer or search area extent at specified zoom ratio in all layout windows
     * :guilabel:`New` - Zoom out to next largest zoom scale in all layout windows, if required
     * :guilabel:`Improved` - Zoom to buffer or search area extent at specified zoom ratio in all map windows
-    * :guilabel:`Fix` - Display and set form comboboxes correctly when default values are blank
+    * :guilabel:`Fixed` - Display and set form comboboxes correctly when default values are blank
     * :guilabel:`Removed` - Removed config variables: BufferUnitOptions, AddSelectedLayersOptions, OverwriteLabelOptions, CombinedSitesTableOptions
 
 **1.0.12**
 (17Feb2025)
     * :guilabel:`Changed` - Added config variable 'GISFolder' to output GIS files to separate sub-folder
-    * :guilabel:`Fix` - Ensure search area and buffer are always added to map if kept
-    * :guilabel:`Fix` - Possible error when outputting if GIS layers not added to map
+    * :guilabel:`Fixed` - Ensure search area and buffer are always added to map if kept
+    * :guilabel:`Fixed` - Possible error when outputting if GIS layers not added to map
 
 **1.0.11**
 (14Jan2025)
@@ -78,8 +88,8 @@ Change Log
 (6Jan2025)
 
     * :guilabel:`Improved` - Extra error handling when updating search layer
-    * :guilabel:`Fix` - Ensure XML profiles are not repeated
-    * :guilabel:`Fix` - Report errors when adding search area and buffer to map
+    * :guilabel:`Fixed` - Ensure XML profiles are not repeated
+    * :guilabel:`Fixed` - Report errors when adding search area and buffer to map
 
 **1.0.9**
 (17Dec2024)
@@ -110,7 +120,7 @@ Change Log
     * :guilabel:`New` - Button to expand/contract the map layers list
     * :guilabel:`New` - Improve load performance
     * :guilabel:`Change` - Standardise shared functions
-    * :guilabel:`Fix` - Bug where map layer names in user interface are truncated
+    * :guilabel:`Fixed` - Bug where map layer names in user interface are truncated
 
 **1.0.4**
 (12Aug2024)
@@ -119,7 +129,7 @@ Change Log
     * :guilabel:`New` - Enable column names to be case insensitive
     * :guilabel:`Change` - Simplify stats column clause syntax
     * :guilabel:`New` - Add units to Area column name when created
-    * :guilabel:`Fix` - Bug labelling columns
+    * :guilabel:`Fixed` - Bug labelling columns
 
 **1.0.3**
 (9Aug2024)
@@ -128,8 +138,8 @@ Change Log
     * :guilabel:`New` - Option to output nearest distance and bearing fields using centroid or boundary
     * :guilabel:`New` - Option to keep selected layers even if not adding to the map
     * :guilabel:`New` - Add step numbers for each layer being processed to the log file
-    * :guilabel:`Fix` - Bug when checking output, group by and order by fields exist
-    * :guilabel:`Fix` - Bug when columns not found don't result in an error
+    * :guilabel:`Fixed` - Bug when checking output, group by and order by fields exist
+    * :guilabel:`Fixed` - Bug when columns not found don't result in an error
 
 **1.0.2**
 (7Aug2024)
@@ -138,8 +148,8 @@ Change Log
     * :guilabel:`New` - Option to pause map during processing
     * :guilabel:`Improved` - Show notifications upon completion
     * :guilabel:`Improved` - Improve method of verifying query
-    * :guilabel:`Fix` - Bug not moving output layers to group layer
-    * :guilabel:`Fix` - Bug overwriting combined sites table
+    * :guilabel:`Fixed` - Bug not moving output layers to group layer
+    * :guilabel:`Fixed` - Bug overwriting combined sites table
 
 **1.0.1**
 (18Jul2024)
@@ -379,7 +389,7 @@ ensure the system is configured to their requirements.
             <value>Enquiry Site</value>
         </SearchLayer>
 
-        <!-- The extension names for point, polygon and line search area layers. 
+        <!-- The extension names for point, polygon and line search area layers.
         Leave blank to just use the SearchLayer name -->
         <SearchLayerExtensions>
             <value>_point;_region;_polyline</value>
@@ -444,20 +454,20 @@ ensure the system is configured to their requirements.
         <!-- The ratio that map and layout windows will be zoomed out after zooming to a layer extent. -->
         <ZoomRatio>
             <value>1.05</value>
-        </ZoomRatio>    
+        </ZoomRatio>
 
         <!-- The list of zoom scales to use for all layouts, loaded from a semi-colon separated string.
         Note additional scales will be extrapolated from the last two entries. -->
         <ZoomScales>
             <value>2500;5000;7500;10000;12500;15000;20000</value>
-        </ZoomScales>    
+        </ZoomScales>
 
         <!-- The name of the search feature output layer. -->
         <SearchOutputName>
             <value>SearchArea_%subref%</value>
         </SearchOutputName>
 
-        <!-- The base name of the search layer symbology file (without the .lyrx). 
+        <!-- The base name of the search layer symbology file (without the .lyrx).
         Note the relevant extension (from SearchLayerExtensions) will be added. -->
         <SearchSymbologyBase>
             <value>FeatureSymbology</value>
@@ -3133,7 +3143,7 @@ ensure the system is configured to their requirements.
 GNU Free Documentation License
 ==============================
 
-Permission is granted to copy, distribute and/or modify this document under 
+Permission is granted to copy, distribute and/or modify this document under
 the terms of the GNU Free Documentation License, Version 1.3 or any later
 version published by the Free Software Foundation; with no Invariant Sections,
 no Front-Cover Texts and no Back-Cover Texts.  A copy of the license is
@@ -3149,15 +3159,15 @@ included in the Appendix section.
 
                     GNU Free Documentation License
                      Version 1.3, 3 November 2008
-    
-    
+
+
      Copyright (C) 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.
          <http://fsf.org/>
      Everyone is permitted to copy and distribute verbatim copies
      of this license document, but changing it is not allowed.
-    
+
     0. PREAMBLE
-    
+
     The purpose of this License is to make a manual, textbook, or other
     functional and useful document "free" in the sense of freedom: to
     assure everyone the effective freedom to copy and redistribute it,
@@ -3165,12 +3175,12 @@ included in the Appendix section.
     Secondarily, this License preserves for the author and publisher a way
     to get credit for their work, while not being considered responsible
     for modifications made by others.
-    
+
     This License is a kind of "copyleft", which means that derivative
     works of the document must themselves be free in the same sense.  It
     complements the GNU General Public License, which is a copyleft
     license designed for free software.
-    
+
     We have designed this License in order to use it for manuals for free
     software, because free software needs free documentation: a free
     program should come with manuals providing the same freedoms that the
@@ -3178,10 +3188,10 @@ included in the Appendix section.
     it can be used for any textual work, regardless of subject matter or
     whether it is published as a printed book.  We recommend this License
     principally for works whose purpose is instruction or reference.
-    
-    
+
+
     1. APPLICABILITY AND DEFINITIONS
-    
+
     This License applies to any manual or other work, in any medium, that
     contains a notice placed by the copyright holder saying it can be
     distributed under the terms of this License.  Such a notice grants a
@@ -3191,11 +3201,11 @@ included in the Appendix section.
     licensee, and is addressed as "you".  You accept the license if you
     copy, modify or distribute the work in a way requiring permission
     under copyright law.
-    
+
     A "Modified Version" of the Document means any work containing the
     Document or a portion of it, either copied verbatim, or with
     modifications and/or translated into another language.
-    
+
     A "Secondary Section" is a named appendix or a front-matter section of
     the Document that deals exclusively with the relationship of the
     publishers or authors of the Document to the Document's overall
@@ -3206,7 +3216,7 @@ included in the Appendix section.
     connection with the subject or with related matters, or of legal,
     commercial, philosophical, ethical or political position regarding
     them.
-    
+
     The "Invariant Sections" are certain Secondary Sections whose titles
     are designated, as being those of Invariant Sections, in the notice
     that says that the Document is released under this License.  If a
@@ -3214,12 +3224,12 @@ included in the Appendix section.
     allowed to be designated as Invariant.  The Document may contain zero
     Invariant Sections.  If the Document does not identify any Invariant
     Sections then there are none.
-    
+
     The "Cover Texts" are certain short passages of text that are listed,
     as Front-Cover Texts or Back-Cover Texts, in the notice that says that
     the Document is released under this License.  A Front-Cover Text may
     be at most 5 words, and a Back-Cover Text may be at most 25 words.
-    
+
     A "Transparent" copy of the Document means a machine-readable copy,
     represented in a format whose specification is available to the
     general public, that is suitable for revising the document
@@ -3232,7 +3242,7 @@ included in the Appendix section.
     or discourage subsequent modification by readers is not Transparent.
     An image format is not Transparent if used for any substantial amount
     of text.  A copy that is not "Transparent" is called "Opaque".
-    
+
     Examples of suitable formats for Transparent copies include plain
     ASCII without markup, Texinfo input format, LaTeX input format, SGML
     or XML using a publicly available DTD, and standard-conforming simple
@@ -3243,17 +3253,17 @@ included in the Appendix section.
     processing tools are not generally available, and the
     machine-generated HTML, PostScript or PDF produced by some word
     processors for output purposes only.
-    
+
     The "Title Page" means, for a printed book, the title page itself,
     plus such following pages as are needed to hold, legibly, the material
     this License requires to appear in the title page.  For works in
     formats which do not have any title page as such, "Title Page" means
     the text near the most prominent appearance of the work's title,
     preceding the beginning of the body of the text.
-    
+
     The "publisher" means any person or entity that distributes copies of
     the Document to the public.
-    
+
     A section "Entitled XYZ" means a named subunit of the Document whose
     title either is precisely XYZ or contains XYZ in parentheses following
     text that translates XYZ in another language.  (Here XYZ stands for a
@@ -3261,16 +3271,16 @@ included in the Appendix section.
     "Dedications", "Endorsements", or "History".)  To "Preserve the Title"
     of such a section when you modify the Document means that it remains a
     section "Entitled XYZ" according to this definition.
-    
+
     The Document may include Warranty Disclaimers next to the notice which
     states that this License applies to the Document.  These Warranty
     Disclaimers are considered to be included by reference in this
     License, but only as regards disclaiming warranties: any other
     implication that these Warranty Disclaimers may have is void and has
     no effect on the meaning of this License.
-    
+
     2. VERBATIM COPYING
-    
+
     You may copy and distribute the Document in any medium, either
     commercially or noncommercially, provided that this License, the
     copyright notices, and the license notice saying this License applies
@@ -3280,13 +3290,13 @@ included in the Appendix section.
     copying of the copies you make or distribute.  However, you may accept
     compensation in exchange for copies.  If you distribute a large enough
     number of copies you must also follow the conditions in section 3.
-    
+
     You may also lend copies, under the same conditions stated above, and
     you may publicly display copies.
-    
-    
+
+
     3. COPYING IN QUANTITY
-    
+
     If you publish printed copies (or copies in media that commonly have
     printed covers) of the Document, numbering more than 100, and the
     Document's license notice requires Cover Texts, you must enclose the
@@ -3299,12 +3309,12 @@ included in the Appendix section.
     Copying with changes limited to the covers, as long as they preserve
     the title of the Document and satisfy these conditions, can be treated
     as verbatim copying in other respects.
-    
+
     If the required texts for either cover are too voluminous to fit
     legibly, you should put the first ones listed (as many as fit
     reasonably) on the actual cover, and continue the rest onto adjacent
     pages.
-    
+
     If you publish or distribute Opaque copies of the Document numbering
     more than 100, you must either include a machine-readable Transparent
     copy along with each Opaque copy, or state in or with each Opaque copy
@@ -3317,22 +3327,22 @@ included in the Appendix section.
     location until at least one year after the last time you distribute an
     Opaque copy (directly or through your agents or retailers) of that
     edition to the public.
-    
+
     It is requested, but not required, that you contact the authors of the
     Document well before redistributing any large number of copies, to
     give them a chance to provide you with an updated version of the
     Document.
-    
-    
+
+
     4. MODIFICATIONS
-    
+
     You may copy and distribute a Modified Version of the Document under
     the conditions of sections 2 and 3 above, provided that you release
     the Modified Version under precisely this License, with the Modified
     Version filling the role of the Document, thus licensing distribution
     and modification of the Modified Version to whoever possesses a copy
     of it.  In addition, you must do these things in the Modified Version:
-    
+
     A. Use in the Title Page (and on the covers, if any) a title distinct
        from that of the Document, and from those of previous versions
        (which should, if there were any, be listed in the History section
@@ -3380,20 +3390,20 @@ included in the Appendix section.
     N. Do not retitle any existing section to be Entitled "Endorsements"
        or to conflict in title with any Invariant Section.
     O. Preserve any Warranty Disclaimers.
-    
+
     If the Modified Version includes new front-matter sections or
     appendices that qualify as Secondary Sections and contain no material
     copied from the Document, you may at your option designate some or all
     of these sections as invariant.  To do this, add their titles to the
     list of Invariant Sections in the Modified Version's license notice.
     These titles must be distinct from any other section titles.
-    
+
     You may add a section Entitled "Endorsements", provided it contains
     nothing but endorsements of your Modified Version by various
     parties--for example, statements of peer review or that the text has
     been approved by an organization as the authoritative definition of a
     standard.
-    
+
     You may add a passage of up to five words as a Front-Cover Text, and a
     passage of up to 25 words as a Back-Cover Text, to the end of the list
     of Cover Texts in the Modified Version.  Only one passage of
@@ -3403,21 +3413,21 @@ included in the Appendix section.
     by arrangement made by the same entity you are acting on behalf of,
     you may not add another; but you may replace the old one, on explicit
     permission from the previous publisher that added the old one.
-    
+
     The author(s) and publisher(s) of the Document do not by this License
     give permission to use their names for publicity for or to assert or
     imply endorsement of any Modified Version.
-    
-    
+
+
     5. COMBINING DOCUMENTS
-    
+
     You may combine the Document with other documents released under this
     License, under the terms defined in section 4 above for modified
     versions, provided that you include in the combination all of the
     Invariant Sections of all of the original documents, unmodified, and
     list them all as Invariant Sections of your combined work in its
     license notice, and that you preserve all their Warranty Disclaimers.
-    
+
     The combined work need only contain one copy of this License, and
     multiple identical Invariant Sections may be replaced with a single
     copy.  If there are multiple Invariant Sections with the same name but
@@ -3426,32 +3436,32 @@ included in the Appendix section.
     author or publisher of that section if known, or else a unique number.
     Make the same adjustment to the section titles in the list of
     Invariant Sections in the license notice of the combined work.
-    
+
     In the combination, you must combine any sections Entitled "History"
     in the various original documents, forming one section Entitled
     "History"; likewise combine any sections Entitled "Acknowledgements",
     and any sections Entitled "Dedications".  You must delete all sections
     Entitled "Endorsements".
-    
-    
+
+
     6. COLLECTIONS OF DOCUMENTS
-    
+
     You may make a collection consisting of the Document and other
     documents released under this License, and replace the individual
     copies of this License in the various documents with a single copy
     that is included in the collection, provided that you follow the rules
     of this License for verbatim copying of each of the documents in all
     other respects.
-    
+
     You may extract a single document from such a collection, and
     distribute it individually under this License, provided you insert a
     copy of this License into the extracted document, and follow this
     License in all other respects regarding verbatim copying of that
     document.
-    
-    
+
+
     7. AGGREGATION WITH INDEPENDENT WORKS
-    
+
     A compilation of the Document or its derivatives with other separate
     and independent documents or works, in or on a volume of a storage or
     distribution medium, is called an "aggregate" if the copyright
@@ -3460,7 +3470,7 @@ included in the Appendix section.
     When the Document is included in an aggregate, this License does not
     apply to the other works in the aggregate which are not themselves
     derivative works of the Document.
-    
+
     If the Cover Text requirement of section 3 is applicable to these
     copies of the Document, then if the Document is less than one half of
     the entire aggregate, the Document's Cover Texts may be placed on
@@ -3468,10 +3478,10 @@ included in the Appendix section.
     electronic equivalent of covers if the Document is in electronic form.
     Otherwise they must appear on printed covers that bracket the whole
     aggregate.
-    
-    
+
+
     8. TRANSLATION
-    
+
     Translation is considered a kind of modification, so you may
     distribute translations of the Document under the terms of section 4.
     Replacing Invariant Sections with translations requires special
@@ -3484,49 +3494,49 @@ included in the Appendix section.
     of those notices and disclaimers.  In case of a disagreement between
     the translation and the original version of this License or a notice
     or disclaimer, the original version will prevail.
-    
+
     If a section in the Document is Entitled "Acknowledgements",
     "Dedications", or "History", the requirement (section 4) to Preserve
     its Title (section 1) will typically require changing the actual
     title.
-    
-    
+
+
     9. TERMINATION
-    
+
     You may not copy, modify, sublicense, or distribute the Document
     except as expressly provided under this License.  Any attempt
     otherwise to copy, modify, sublicense, or distribute it is void, and
     will automatically terminate your rights under this License.
-    
+
     However, if you cease all violation of this License, then your license
     from a particular copyright holder is reinstated (a) provisionally,
     unless and until the copyright holder explicitly and finally
     terminates your license, and (b) permanently, if the copyright holder
     fails to notify you of the violation by some reasonable means prior to
     60 days after the cessation.
-    
+
     Moreover, your license from a particular copyright holder is
     reinstated permanently if the copyright holder notifies you of the
     violation by some reasonable means, this is the first time you have
     received notice of violation of this License (for any work) from that
     copyright holder, and you cure the violation prior to 30 days after
     your receipt of the notice.
-    
+
     Termination of your rights under this section does not terminate the
     licenses of parties who have received copies or rights from you under
     this License.  If your rights have been terminated and not permanently
     reinstated, receipt of a copy of some or all of the same material does
     not give you any rights to use it.
-    
-    
+
+
     10. FUTURE REVISIONS OF THIS LICENSE
-    
+
     The Free Software Foundation may publish new, revised versions of the
     GNU Free Documentation License from time to time.  Such new versions
     will be similar in spirit to the present version, but may differ in
     detail to address new problems or concerns.  See
     http://www.gnu.org/copyleft/.
-    
+
     Each version of the License is given a distinguishing version number.
     If the Document specifies that a particular numbered version of this
     License "or any later version" applies to it, you have the option of
@@ -3539,42 +3549,42 @@ included in the Appendix section.
     License can be used, that proxy's public statement of acceptance of a
     version permanently authorizes you to choose that version for the
     Document.
-    
+
     11. RELICENSING
-    
+
     "Massive Multiauthor Collaboration Site" (or "MMC Site") means any
     World Wide Web server that publishes copyrightable works and also
     provides prominent facilities for anybody to edit those works.  A
     public wiki that anybody can edit is an example of such a server.  A
     "Massive Multiauthor Collaboration" (or "MMC") contained in the site
     means any set of copyrightable works thus published on the MMC site.
-    
-    "CC-BY-SA" means the Creative Commons Attribution-Share Alike 3.0 
-    license published by Creative Commons Corporation, a not-for-profit 
-    corporation with a principal place of business in San Francisco, 
-    California, as well as future copyleft versions of that license 
+
+    "CC-BY-SA" means the Creative Commons Attribution-Share Alike 3.0
+    license published by Creative Commons Corporation, a not-for-profit
+    corporation with a principal place of business in San Francisco,
+    California, as well as future copyleft versions of that license
     published by that same organization.
-    
-    "Incorporate" means to publish or republish a Document, in whole or in 
+
+    "Incorporate" means to publish or republish a Document, in whole or in
     part, as part of another Document.
-    
-    An MMC is "eligible for relicensing" if it is licensed under this 
-    License, and if all works that were first published under this License 
-    somewhere other than this MMC, and subsequently incorporated in whole or 
-    in part into the MMC, (1) had no cover texts or invariant sections, and 
+
+    An MMC is "eligible for relicensing" if it is licensed under this
+    License, and if all works that were first published under this License
+    somewhere other than this MMC, and subsequently incorporated in whole or
+    in part into the MMC, (1) had no cover texts or invariant sections, and
     (2) were thus incorporated prior to November 1, 2008.
-    
+
     The operator of an MMC Site may republish an MMC contained in the site
     under CC-BY-SA on the same site at any time before August 1, 2009,
     provided the MMC is eligible for relicensing.
-    
-    
+
+
     ADDENDUM: How to use this License for your documents
-    
+
     To use this License in a document you have written, include a copy of
     the License in the document and put the following copyright and
     license notices just after the title page:
-    
+
         Copyright (c)  YEAR  YOUR NAME.
         Permission is granted to copy, distribute and/or modify this document
         under the terms of the GNU Free Documentation License, Version 1.3
@@ -3582,17 +3592,17 @@ included in the Appendix section.
         with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
         A copy of the license is included in the section entitled "GNU
         Free Documentation License".
-    
+
     If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
     replace the "with...Texts." line with this:
-    
+
         with the Invariant Sections being LIST THEIR TITLES, with the
         Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.
-    
+
     If you have Invariant Sections without Cover Texts, or some other
     combination of the three, merge those two alternatives to suit the
     situation.
-    
+
     If your document contains nontrivial examples of program code, we
     recommend releasing these examples in parallel under your choice of
     free software license, such as the GNU General Public License,
